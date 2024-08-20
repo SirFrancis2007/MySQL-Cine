@@ -52,63 +52,6 @@ CALL InsActor (@idActorSantino, @idPeliFrozen, 'Santino ', 'Fontana', '1982-03-2
  CALL InsActor(@idActorTopher, @idPeliInterestelar, 'Topher', 'Grace', '1978-07-12', 'M', 'Estadounidense', 'Actor Live Action', 'Getty') $$
  CALL InsActor(@idActorChalamet, @idPeliInterestelar, 'Timothée', 'Chalamet', '1995-12-27', 'M', 'Estadounidense', 'Actor Live Action', 'Tom joven') $$
  CALL InsActor(@idActorStewart, @idPeliInterestelar, 'Josh', 'Stewart', '1977-02-06', 'M', 'Estadounidense', 'Actor de voz', 'CASE') $$
- -- El viaje de Chihir $$
- CALL InsActor(@idActorRumi, @idPeliChihiro, 'Hiiragi', 'Rumi', '1987-08-01', 'F', 'Japonesa', 'Actriz de voz', 'Chihiro Ogino' ) $$
- CALL InsActor(@idActorMiyu, @idPeliChihiro, 'Hirino', 'Miyu', '1998-02-19', 'M', 'Japonés', 'Actor de voz', 'Haku' ) $$
- CALL InsActor(@idActorTamai, @idPeliChihiro, 'Yoomi', 'Tamai', '1977-08-06', 'M', 'Japonesa', 'Actor de voz', 'Lin' ) $$
- CALL InsActor(@idActorKamiki, @idPeliChihiro, 'Ryūnosuke', 'Kamiki', '1993-05-19', 'M', 'Japonés', 'Actor de voz', 'Boh' ) $$
- CALL InsActor(@idActorMari, @idPeliChihiro, 'Natsuki', 'Mari', '1952-05-02', 'F', 'Japonesa', 'Actriz de voz', 'Yubaba/Zeniba' ) $$
- CALL InsActor(@idActorBunta, @idPeliChihiro, 'Sugawara', 'Bunta', '1933-08-16', 'M', 'Japonés', 'Actor de voz', 'Kamaji' ) $$
- CALL InsActor(@idActorNaito, @idPeliChihiro, 'Takashi', 'Naito', '1955-05-28', 'M', 'Japonés', 'Actor de voz', 'Akio Ogino' ) $$
- CALL InsActor(@idActorYasuko, @idPeliChihiro, 'Yasuko', 'Sawaguchi','1965-06-28', 'F', 'Japonesa', 'Actriz de voz', 'Yugo Ogino' ) $$
- CALL InsActor(@idActorAkio, @idPeliChihiro, 'Akio', 'Nakamura', '1960-03-03', 'M', 'Japonés', 'Actor de voz', 'Sin Cara' ) $$
- CALL InsActor(@idActorKamijo, @idPeliChihiro, 'Tsunehiko', 'Kamijo', '1940-03-07', 'M', 'Japonés', 'Actor de voz', 'Chichiyaku' ) $$
- CALL InsActor(@idActorKoba, @idPeliChihiro, 'Koba', ' Hayashi', '1935-07-27', 'M', 'Japonés', 'Actor de voz', 'Espíritu del Río' ) $$
- CALL InsActor(@idActorGashuin, @idPeliChihiro, 'Tatsuya', 'Gashuin', '1950-12-10', 'M', 'Japonés', 'Actor de voz', 'Aoegeru' ) $$
- -- El extraño mundo de jac $$
- CALL InsActor(@idActorSarandon, @idPeliJack, 'Chiris', 'Sarandon', '1942-07-24', 'M', 'Estadounidense', 'Actor de voz', 'Jack Skellington' ) $$
- CALL InsActor(@idActorCatherine,@idPeliJack, 'Catherine','O´Hara', '1954-03-04', 'F', 'Estadounidense', 'Actriz de voz', 'Sally' ) $$
- CALL InsActor(@idActorGlenn, @idPeliJack, 'Glenn', 'Shadix', '1953-04-15', 'M', 'Estadounidense', 'Actor de voz', 'Alcalde' ) $$
- CALL InsActor(@idActorPage, @idPeliJack, 'Ken', 'Page', '1954-01-20', 'M', 'Estadounidense', 'Actor de voz', 'Oogie Boogie' ) $$
- -- El gato con botas $$
-CALL InsActor (@idActorBandera, @idPeliGatoBotas, 'Antonio ', 'Bandera', '1960-08-10', 'M', 'Español', 'Actor de voz', 'El gato con botas' ) $$
-CALL InsActor (@idActorHayek, @idPeliGatoBotas, 'Salma ', 'Hayek', '1996-09-02', 'F', 'Mexicana', 'Actriz de voz', 'Kitty Patitas suave' ) $$
-CALL InsActor (@idActorZacharius, @idPeliGatoBotas, 'Zacharius', 'Galifianakis', '1969-11-01', 'M', 'Estadounidense', 'Actor de voz','Humpty Dumpty') $$
-CALL InsActor (@idActorBob, @idPeliGatoBotas, 'Billy Bob', 'Thornton', '1955-08-04', 'M', 'Estadounidense', 'Actor de voz', 'Jack' ) $$
-CALL InsActor (@idActorAmy, @idPeliGatoBotas, 'Amy', 'Sedaris', '1961-03-29', 'F', 'Estadounidense', 'Actriz de voz', 'Jill' ) $$
-CALL InsActor (@idActorToro, @idPeliGatoBotas, 'Guillermo', 'Del Toro', '1964-10-09', 'M', 'Mexicano', 'Actor de voz', 'Comandante' ) $$
-CALL InsActor (@idActorMarie, @idPeliGatoBotas, 'Constance', 'Marie', '1969-09-09', 'F', 'Estadounidense', 'Actriz de voz', 'Imelda' ) $$
-CALL InsActor (@idActorRich, @idPeliGatoBotas, 'Rich', 'Dietl', '1980-07-21', 'M', 'Estadounidense', 'Actor de voz', 'Bounty hunter' ) $$
- -- El gato con botas: el ultimo dese $$
- CALL InsActor(@idActorGuillen, @idPeliGatoDeseo, 'Harvey', 'Guillen', '1990-05-03', 'M', 'Estadounidense', 'Actor de voz', 'Perro' ) $$
- CALL InsActor(@idActorMoura, @idPeliGatoDeseo, 'Wagner ', 'Moura', '1976-06-27', 'M', 'Brasileño', 'Actor de voz', 'Lobo' ) $$
- CALL InsActor(@idActorWagner, @idPeliGatoDeseo, 'Wagner', 'Moura', '1976-06-27', 'M', 'Brasileño', 'Actor de voz', 'Bebe oso' ) $$
- CALL InsActor(@idActorPugh, @idPeliGatoDeseo, 'Florence', 'Pugh', '1996-01-03', 'F', 'Británica', 'Actriz de voz', 'Ricitos de oro' ) $$
- CALL InsActor(@idActorColman, @idPeliGatoDeseo, 'Olivia', 'Colman', '1974-01-30', 'F', 'Británica', 'Actriz de voz', 'Mama oso' ) $$
- CALL InsActor(@idActorWinstone, @idPeliGatoDeseo, 'Ray', 'Winstone', '1957-02-19', 'M', 'Británico', 'Actor de voz', 'Papa oso' ) $$
- -- Megalodo $$
- CALL InsActor(@idActorStatham, @idPeliMegalodon, 'Jason ', 'Statham', '1967-07-26', 'M', 'Britanico', 'Actor Live Action', 'Jonas Taylor' ) $$
- CALL InsActor(@idActorLi, @idPeliMegalodon, 'Bingbing', 'Li', '1973-02-27', 'F','China', 'Actriz Live Action', 'Suyin' ) $$
- CALL InsActor(@idActorWilson, @idPeliMegalodon,'Rainn', 'Wilson', '1968-01-20', 'M', 'Estadounidense', 'Actor Live Action', 'Morris' ) $$
- CALL InsActor(@idActorCurtis, @idPeliMegalodon, 'Cliff ', 'Curtis', '1968-07-27', 'M', 'Neozelandes', 'Actor Live Action', 'Mac' ) $$
- CALL InsActor(@idActorChao, @idPeliMegalodon, 'Winston', 'Chao', '1960-06-09','M', 'Taiwanes', 'Actor Live Action', 'Zhang' ) $$
- CALL InsActor(@idActorRose, @idPeliMegalodon, 'Ruby', 'Rose', '1986-03-20', 'F', 'Australiana', 'Actriz Live Action', 'Jaxx' ) $$
- CALL InsActor(@idActorKennedy, @idPeliMegalodon, 'Page ', 'Kennedy', '1976-11-22', 'M', 'Estadounidense', 'Actor Live Action', 'DJ' ) $$
- CALL InsActor(@idActorTaylor, @idPeliMegalodon, 'Robert', 'Taylor II', '1963-11-12', 'M','Australiano', 'Actor Live Action','Heller' ) $$
- -- Megalodon I $$
- CALL InsActor(@idActorWu, @idPeliMegalodon2, 'Jing', 'Wu', '1974-04-03', 'F', 'China', 'Atriz live Action', 'Jiu Ming Zhang' ) $$
- CALL InsActor(@idActorCai, @idPeliMegalodon2, 'Shuya', 'Sophia Cai', '2008-04-22', 'F', 'China', 'Atriz live Action', 'Meiying' ) $$
- CALL InsActor(@idActorSegio, @idPeliMegalodon2, 'Segio', 'Peris-Mencheta', '1975-04-07', 'M', 'Español', 'Actor Live Action', 'Montes' ) $$
- CALL InsActor(@idActorSamuels, @idPeliMegalodon2, 'Skyler', 'Samuels', '1994-04-14', 'F', 'Estadounidense', 'Actor Live Action', 'Jess' ) $$
- CALL InsActor(@idActorMahut, @idPeliMegalodon2, 'Melissanthi', 'Mahut', '1988-09-20', 'F', 'Canadiense', 'Atriz live Action', 'Rigas' ) $$
- -- El origen de los guardianes $$
- CALL InsActor(@idActorPine, @idPeliGuardianes, 'Christopher ', 'Pine', '1980-08-26', 'M', 'Estadouniodense', 'Actor de voz', 'Jack Fros' ) $$
- CALL InsActor(@idActorLaw, @idPeliGuardianes, 'David Jude', 'Law', '1972-12-29', 'M', 'Estadouniodense', 'Actor de voz', 'Pitch Black' ) $$
- CALL InsActor(@idActorJackman, @idPeliGuardianes, 'Michael', 'Jackman', '1968-10-12', 'M', 'Estadouniodense', 'Actor de voz', 'Conejo de pascuas' ) $$
- CALL InsActor(@idActorBaldwin, @idPeliGuardianes, 'Alexander', 'Baldwin', '1958-04-03', 'M', 'Estadouniodense', 'Actor de voz', 'Santa Claus' ) $$
- CALL InsActor(@idActorFisher, @idPeliGuardianes, 'Isla', 'Fisher', '1976-02-03', 'F', 'Australiana', 'Actor de voz', 'Hada de los dientes' ) $$
- CALL InsActor(@idActorGoyo, @idPeliGuardianes, 'Dakota ', 'Goyo', '1999-08-22', 'M', 'Canadiense', 'Actor de voz', 'Jamie Bennet' ) $$
-
 
 DELIMITER $$
 /*procedure de saga */
@@ -126,31 +69,29 @@ END $$
 
 CALL insSaga (@idSagaFrozen_1, 1 ,@idPeliFrozen, 'Frozen una aventura congelada') $$
 CALL insSAga (@idSagaFrozen_2, 1 ,@idPeliFrozen2, 'Frozen 2') $$
-CALL insSaga (@idSagaMegalodon_1, 2 ,@idPeliMegalodon, 'Megalodon') $$
-CALL insSaga (@idSagaMegalodon_2, 2 ,@idPeliMegalodon2, 'Megalodon II: El gran abismo') $$
-CALL insSaga (@idSagaGatoBotas, 3 ,@idPeliGatoBotas, 'El gato con botas') $$
-CALL insSaga (@idSagaGatoDeseo, 3 ,@idPeliGatoDeseo, 'El gato con botas: el ultimo deseo') $$ 
-
 
 
 --Insert en Produccion:
 drop procedure if exists InsProduccion $$
 create procedure InsProduccion (OUT unidProduccion tinyint unsigned,
- unidPelicula mediumint unsigned,
- unidEstudio tinyint unsigned,
- unDirector_General varchar (50),
- unGuion varchar (100),
- unProductor varchar(100),
- unVestuario varchar (100),
- unSonido varchar (100),
- unPresupuesto decimal,
- unaMusica varchar (100))
+                                unidPelicula mediumint unsigned,
+                                unidEstudio tinyint unsigned,
+                                unDirector_General varchar (50),
+                                unGuion varchar (100),
+                                unProductor varchar(100),
+                                unVestuario varchar (100),
+                                unSonido varchar (100),
+                                unPresupuesto decimal,
+                                unaMusica varchar (100))
 begin
  insert into Produccion(idPelicula,idEstudio, Director_General, Guion, Productor, Vestuario, Sonido, Presupuesto, Musica)
  values (unidPelicula, unidEstudio, unDirector_General, unGuion, unProductor, unVestuario, unSonido, unPresupuesto, unaMusica);
  SET unidProduccion = LAST_INSERT_ID();
 end $$
 
+
+
+call InsProduccion
 
 -- Insert en Trailer:
 delimiter $$
@@ -169,18 +110,10 @@ end$$
  CALL insTraieler (@idTrFrozen1, @idGFamiliar, @idPeliFrozen, 'Frozen una aventura congelada', '00:01:30') $$ -- trailer 1
  CALL insTraieler (@idTrFrozen1_2, @idGFamiliar, @idPeliFrozen, 'Frozen una aventura congelada', '00:02:25') $$ -- trailer 2
  CALL insTraieler (@idTrFrozen2, @idGFamiliar, @idPeliFrozen2, 'Frozen 2', '00:02:01') $$
- CALL insTraieler (@idTrMegalodon, @idGAccion, @idPeliMegalodon, 'Megalodon', '00:02:25') $$
- CALL insTraieler (@idTrMegalodonII, @idGAccion, @idPeliMegalodon2, 'Megalodon II: El gran abismo', '00:03:04') $$
- CALL insTraieler (@idTrGatoBotas, @idGAventura, @idPeliGatoBotas, 'El gato con botas', '00:02.00') $$
- CALL insTraieler (@idTrBotasDeseo, @idGAventura, @idPeliGatoDeseo, 'El gato con botas: el ultimo deseo', '00:02:30') $$
- CALL insTraieler (@idTrJack, @idGFantasia, @idPeliJack, 'El extraño mundo de Jack', '00:01:26') $$
- CALL insTraieler (@idTrGuardianes_1, @idGFantasia, @idPeliGuardianes, 'El origen de los guardianes', '00:02:25') $$
- CALL insTraieler (@idTrGuardianes_2, @idGFantasia, @idPeliGuardianes, 'El origen de los guardianes', '00:02:30') $$
- CALL insTraieler (@idTrInterestelar_1, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:01:39') $$ -- trailer 1
+  CALL insTraieler (@idTrInterestelar_1, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:01:39') $$ -- trailer 1
  CALL insTraieler (@idTrInterestelar_2, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:20') $$ -- trailer 2
  CALL insTraieler (@idTrInterestelar_3, @idGFiccion1, @idPeliInterestelar, 'Interestelar', '00:02:26') $$-- trailer 3
  CALL insTraieler (@idTrInterestelar_4, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:19') $$ -- tailer 4
- CALL insTraieler (@idTrChihiro, @idGFantasia, @idPeliChihiro, 'El viaje de Chihiro', '00:01:37') $$
 
 -- Insert en Genero:
 delimiter $$
@@ -193,6 +126,12 @@ begin
 
  SET unidGenero = LAST_INSERT_ID();
 end$$
+
+call InsGenero (@idGFiccion, 'Ficcion') $$
+call InsGenero (@idGFantasia, 'Fantasia') $$
+call InsGenero (@idGFamiliar, 'Familiar') $$
+call InsGenero (@idGAccion, 'Accion') $$
+call InsGenero (@idGAventura, 'Aventura infantil') $$
 
 DELIMITER $$
 
@@ -271,3 +210,7 @@ begin
 
 end $$
 
+call InsEstudio (@idEstudioDisney, 'Disney', '1923-10-23'           ) $$
+call InsEstudio (@idEstudioDream, 'DreamWorld', '1994-10-12'        ) $$
+call InsEstudio (@idEstudioWarner, 'Warner Bros', '1923-04-04'      ) $$
+call InsEstudio (@idEstudioGhibli, 'Studio Ghibli', '1985-06-15'    ) $$

@@ -7,10 +7,10 @@ START TRANSACTION ;
  
  insert into Genero (idGenero, Genero)
  values (@idGFiccion, 'Ficcion'),
- (@idGFantasia, 'Fantasia'),
- (@idGFamiliar, 'Familiar'),
- (@idGAccion, 'Accion'),
- (@idGAventura, 'Aventura infantil')
+        (@idGFantasia, 'Fantasia'),
+        (@idGFamiliar, 'Familiar'),
+        (@idGAccion, 'Accion'),
+        (@idGAventura, 'Aventura infantil')
  ;
  
  insert into Estudio (idEstudio, Nombre, fundacion)
@@ -26,9 +26,9 @@ START TRANSACTION ;
  (@idProduFrozen2, @idEstudioDisney, 'Chris Buck - Jennifer Lee', ' Peter Del Vecho', ' Edith Head - Hubert de Givenchy', 'Jennifer Lee', 'Aurora Aksnes', 'Kristen Anderson Lopez', 150000000),
  --(@idProduMegalodon, @idEstudioWarner, 'Jon Turteltaub', 'Ben Wheatley', 'Amanda Neale', 'Dean Georgaris - Jon Hoeber - Erich Hoeber', null, 'Harry Gregson William', 139000000), -- Megadolon 1
  -- (@idProduMegalodon2, @idEstudioWarner, 'Ben Wheatley', 'Lorenzo Di Bonaventura - Belle Avery', null, 'John Hoeber - Erich Hoeber - Dean Georgaris', null, 'Harry Gregson William', 139000000), -- Megadolon 2
- (@idProduGatoBota, @idEstudioDream, 'Chris Miller', 'Joe Aguilar-Latifa Ouaou', null, 'Tom Wheeler', null, 'henry jackman', 130000000), -- Gato con Botas 1
- (@idProduGatoDeseo, @idEstudioDream, 'Joel Crawford', 'Mark Swift-Chris Meledandri-Andrew Adamson', 'Januel Mercado', 'Januel Mercado', 'Heitor Pereira', null ,90000000),-- Gato con Botas 2
- (@idProduJack, @idEstudioDisney, 'Henry Selick', 'Tim Burton-Denise Di Novi-Danny Elfman', 'Pete Kozachik', 'Caroline Thompson-Michael McDowell-Tim Burton', ' Stan Webb', 'Danny Elfman', 24000000), -- El extraño mundo de Jack
+ -- (@idProduGatoBota, @idEstudioDream, 'Chris Miller', 'Joe Aguilar-Latifa Ouaou', null, 'Tom Wheeler', null, 'henry jackman', 130000000), -- Gato con Botas 1
+ -- (@idProduGatoDeseo, @idEstudioDream, 'Joel Crawford', 'Mark Swift-Chris Meledandri-Andrew Adamson', 'Januel Mercado', 'Januel Mercado', 'Heitor Pereira', null ,90000000),-- Gato con Botas 2
+ -- (@idProduJack, @idEstudioDisney, 'Henry Selick', 'Tim Burton-Denise Di Novi-Danny Elfman', 'Pete Kozachik', 'Caroline Thompson-Michael McDowell-Tim Burton', ' Stan Webb', 'Danny Elfman', 24000000), -- El extraño mundo de Jack
  -- (@idProduGuardianes, @idEstudioDream, 'Peter Ramse', 'Christina Steinberg-Nancy Bernstein', null, 'David Lindsay-Abaire', 'Joyce Arrastia', 'Alexandre Desplat', 145000000), -- El origen de los guadianes*/
  (@idProduInterestelar, @idEstudioWarner, 'Christopher Nolan', 'Emma Thomas-Christopher Nolan-Lynda Obst', 'Mary Zophres', 'Jonathan Nolan-Christopher Nolan', 'Hoyte van Hoytema', 'Hans Zimmer', 165000000),
  -- (@idProduChihiro, @idEstudioGhibli, 'Hayao Miyazaki', 'Toshio Suzuki', null, 'Hayao Miyazaki', 'Joe Hisaishi', 'Takatsugu Muramatsu-Yuji Nomi', 19000000)
@@ -40,11 +40,11 @@ START TRANSACTION ;
  (@idPeliFrozen2, @idProduFrozen2, 'Frozen 2', '2019-01-02', 'Elsa se aventura en lo desconocido para descubrir verdades del pasado', 8.0, '01:48:00', 0, 1453683476),
  -- (@idPeliMegalodon, @idProduMegalodon, 'Megalodon', '2018-08-23', 'Jason Statham protagoniza este thriller submarino donde un grupo de científicos libera accidentalmente a un tiburón prehistórico gigante. Ahora el equipo debe arriesgar la vida en una carrera a contrarreloj para evitar una masacre masiva', 8.0, '01:53:00', 13, 530243742),
  -- (@idPeliMegalodon2, @idProduMegalodon2, 'Megalodon II: El gran abismo', '2023-08-03', 'Jason Statham y Wu Jing, el ícono mundial de las artes marciales, se sumergen en aguas desconocidas y lideran un equipo de investigación que explorará las profundidades más abismales del océano', 9.0, '01:55:00', 13, 395000000),
- (@idPeliGatoBotas, @idProduGatoBota, 'El gato con botas', '2011-12-07', 'El famoso gato tiene la aventura de su vida cuando une fuerzas con Humpty Dumpty y la gata Kitty para robarse al ganso de los huevos de oro', 8.0, '01:30:00', 0, 554000000),
- (@idPeliGatoDeseo, @idProduGatoDeseo, 'El gato con botas: El último deseo', '2023-01-05', 'El Gato con Botas descubre que, debido a su pasión por la aventura, ha gastado ya 8 de sus 9 vidas. Por tanto, emprende un peligroso viaje en busca del legendario Último Deseo para solicitar que le restauren las vidas que ya perdió', 7.6, '01:40:00', 0, 485000000),
+ -- (@idPeliGatoBotas, @idProduGatoBota, 'El gato con botas', '2011-12-07', 'El famoso gato tiene la aventura de su vida cuando une fuerzas con Humpty Dumpty y la gata Kitty para robarse al ganso de los huevos de oro', 8.0, '01:30:00', 0, 554000000),
+ -- (@idPeliGatoDeseo, @idProduGatoDeseo, 'El gato con botas: El último deseo', '2023-01-05', 'El Gato con Botas descubre que, debido a su pasión por la aventura, ha gastado ya 8 de sus 9 vidas. Por tanto, emprende un peligroso viaje en busca del legendario Último Deseo para solicitar que le restauren las vidas que ya perdió', 7.6, '01:40:00', 0, 485000000),
  
  -- Películas comunes
- (@idPeliJack, @idProduJack, 'El extraño mundo de Jack', '1993-10-29', 'El rey de las calabazas, Jack Skellington, intenta apoderarse de la Navidad', 8.1, '01:19:00', 0, 95321981),
+ --(@idPeliJack, @idProduJack, 'El extraño mundo de Jack', '1993-10-29', 'El rey de las calabazas, Jack Skellington, intenta apoderarse de la Navidad', 8.1, '01:19:00', 0, 95321981),
  -- (@idPeliGuardianes, @idProduGuardianes, 'El origen de los guardianes', '2012-11-22', 'Generación tras generación, guardianes inmortales como Santa Claus, el Conejo de Pascua y la Hada de los Dientes protegen a los niños del mundo de la oscuridad y la desesperación', 7.3, '01:37:00', 0, 306941670),*/
  (@idPeliInterestelar, @idProduInterestelar, 'Interestelar', '2014-11-06', 'Un equipo de exploradores viaja más allá de esta galaxia a través de un reciente descubierto agujero para descubrir si la humanidad tiene un futuro entre las estrellas', 9.0, '02:49:00', 13, 708000000),
  -- (@idPeliChihiro ,@idProduChihiro, 'El viaje de Chihiro', '2003-07-17', 'Chihiro es una niña caprichosa que debe adentrarse en un mundo de fantasía para poder salvar a sus padres, convertidos en cerdos', 4.8, '02:05:00', 10, 31680000)
@@ -93,7 +93,7 @@ START TRANSACTION ;
  (@idActorKoba, @idPeliChihiro, 'Koba', ' Hayashi', '1935-07-27', 'M', 'Japonés', 'Actor de voz', 'Espíritu del Río'),
  (@idActorGashuin, @idPeliChihiro, 'Tatsuya', 'Gashuin', '1950-12-10', 'M', 'Japonés', 'Actor de voz', 'Aoegeru'),*/
  -- El extraño mundo de jack
- (@idActorSarandon, @idPeliJack, 'Chiris', 'Sarandon', '1942-07-24', 'M', 'Estadounidense', 'Actor de voz', 'Jack Skellington'),
+ /*(@idActorSarandon, @idPeliJack, 'Chiris', 'Sarandon', '1942-07-24', 'M', 'Estadounidense', 'Actor de voz', 'Jack Skellington'),
  (@idActorCatherine,@idPeliJack, 'Catherine','O´Hara', '1954-03-04', 'F', 'Estadounidense', 'Actriz de voz', 'Sally'),
  (@idActorGlenn, @idPeliJack, 'Glenn', 'Shadix', '1953-04-15', 'M', 'Estadounidense', 'Actor de voz', 'Alcalde'),
  (@idActorPage, @idPeliJack, 'Ken', 'Page', '1954-01-20', 'M', 'Estadounidense', 'Actor de voz', 'Oogie Boogie'),
@@ -113,7 +113,7 @@ START TRANSACTION ;
  (@idActorPugh, @idPeliGatoDeseo, 'Florence', 'Pugh', '1996-01-03', 'F', 'Británica', 'Actriz de voz', 'Ricitos de oro'),
  (@idActorColman, @idPeliGatoDeseo, 'Olivia', 'Colman', '1974-01-30', 'F', 'Británica', 'Actriz de voz', 'Mama oso'),
  (@idActorWinstone, @idPeliGatoDeseo, 'Ray', 'Winstone', '1957-02-19', 'M', 'Británico', 'Actor de voz', 'Papa oso'),
- -- Megalodon
+ */-- Megalodon
  /*(@idActorStatham, @idPeliMegalodon, 'Jason ', 'Statham', '1967-07-26', 'M', 'Britanico', 'Actor Live Action', 'Jonas Taylor'),
  (@idActorLi, @idPeliMegalodon, 'Bingbing', 'Li', '1973-02-27', 'F','China', 'Actriz Live Action', 'Suyin'),
  (@idActorWilson, @idPeliMegalodon,'Rainn', 'Wilson', '1968-01-20', 'M', 'Estadounidense', 'Actor Live Action', 'Morris'),
@@ -144,8 +144,8 @@ START TRANSACTION ;
  (@idSagaFrozen_2, 1 ,@idPeliFrozen2, 'Frozen 2'),
  -- (@idSagaMegalodon_1, 2 ,@idPeliMegalodon, 'Megalodon'),
  -- (@idSagaMegalodon_2, 2 ,@idPeliMegalodon2, 'Megalodon II: El gran abismo'),
- (@idSagaGatoBotas, 3 ,@idPeliGatoBotas, 'El gato con botas'),
- (@idSagaGatoDeseo, 3 ,@idPeliGatoDeseo, 'El gato con botas: el ultimo deseo')
+ -- (@idSagaGatoBotas, 3 ,@idPeliGatoBotas, 'El gato con botas'),
+ -- (@idSagaGatoDeseo, 3 ,@idPeliGatoDeseo, 'El gato con botas: el ultimo deseo')
 ;
 
  insert into Trailer(idTrailer, idGenero, idPelicula, Nombre, Duracion)
@@ -155,9 +155,9 @@ START TRANSACTION ;
  (@idTrFrozen2, @idGFamiliar, @idPeliFrozen2, 'Frozen 2', '00:02:01'),
  -- (@idTrMegalodon, @idGAccion, @idPeliMegalodon, 'Megalodon', '00:02:25'),
  -- (@idTrMegalodonII, @idGAccion, @idPeliMegalodon2, 'Megalodon II: El gran abismo', '00:03:04'),
- (@idTrGatoBotas, @idGAventura, @idPeliGatoBotas, 'El gato con botas', '00:02.00'),
- (@idTrBotasDeseo, @idGAventura, @idPeliGatoDeseo, 'El gato con botas: el ultimo deseo', '00:02:30'),
- (@idTrJack, @idGFantasia, @idPeliJack, 'El extraño mundo de Jack', '00:01:26'),
+ -- (@idTrGatoBotas, @idGAventura, @idPeliGatoBotas, 'El gato con botas', '00:02.00'),
+ -- (@idTrBotasDeseo, @idGAventura, @idPeliGatoDeseo, 'El gato con botas: el ultimo deseo', '00:02:30'),
+ -- (@idTrJack, @idGFantasia, @idPeliJack, 'El extraño mundo de Jack', '00:01:26'),
  -- (@idTrGuardianes_1, @idGFantasia, @idPeliGuardianes, 'El origen de los guardianes', '00:02:25'),
  -- (@idTrGuardianes_2, @idGFantasia, @idPeliGuardianes, 'El origen de los guardianes', '00:02:30'),
  (@idTrInterestelar_1, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:01:39'), -- trailer 1
@@ -215,7 +215,7 @@ START TRANSACTION ;
  (@idActorKoba, @idPeliChihiro),
  (@idActorGashuin, @idPeliChihiro),*/
  -- El extraño mundo de Jack
- (@idActorSarandon, @idPeliJack),
+ /*(@idActorSarandon, @idPeliJack),
  (@idActorCatherine, @idPeliJack),
  (@idActorGlenn, @idPeliJack),
  (@idActorPage, @idPeliJack),

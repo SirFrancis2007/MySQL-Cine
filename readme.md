@@ -1,3 +1,4 @@
+```mermaid
 erDiagram
 
 
@@ -89,3 +90,5 @@ Estudio||--|{Produccion:""
 Genero}|--||Trailer:""
 
 
+
+```
