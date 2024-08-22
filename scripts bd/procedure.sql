@@ -1,5 +1,8 @@
 USe Pelicula;
 
+/*PROCEDURES FUNCIONAN TODOS, SE PIDE NO TOCAR. 
+    UWU*/
+
 /*Store procedure*/
 
 
@@ -74,24 +77,24 @@ CALL insSAga (@idSagaFrozen_2, 1 ,@idPeliFrozen2, 'Frozen 2') $$
 --Insert en Produccion:
 drop procedure if exists InsProduccion $$
 create procedure InsProduccion (OUT unidProduccion tinyint unsigned,
-                                unidPelicula mediumint unsigned,
                                 unidEstudio tinyint unsigned,
                                 unDirector_General varchar (50),
                                 unGuion varchar (100),
                                 unProductor varchar(100),
                                 unVestuario varchar (100),
                                 unSonido varchar (100),
-                                unPresupuesto decimal,
-                                unaMusica varchar (100))
+                                unaMusica varchar (100),
+                                unPresupuesto decimal)
 begin
- insert into Produccion(idPelicula,idEstudio, Director_General, Guion, Productor, Vestuario, Sonido, Presupuesto, Musica)
- values (unidPelicula, unidEstudio, unDirector_General, unGuion, unProductor, unVestuario, unSonido, unPresupuesto, unaMusica);
+ insert into Produccion(idEstudio, Director_General, Guion, Productor, Vestuario,  Sonido, Musica, Presupuesto)
+ values (unidEstudio, unDirector_General, unGuion, unProductor, unVestuario, unSonido, unaMusica, unPresupuesto);
  SET unidProduccion = LAST_INSERT_ID();
 end $$
 
+call InsProduccion (@idProduFrozen, @idEstudioDisney, 'Chris Buck-Jennifer Lee', ' Peter Del Vecho - Jhon Lasseter', ' Edith Head - Hubert de Givenchy', 'Jennifer Lee', 'Odin Benitez', 'Christophe Beck - Armando Perez - Kristen Anderson Lopez', 150000000) $$
+call InsProduccion (@idProduFrozen2, @idEstudioDisney, 'Chris Buck - Jennifer Lee', ' Peter Del Vecho', ' Edith Head - Hubert de Givenchy', 'Jennifer Lee', 'Aurora Aksnes', 'Kristen Anderson Lopez', 150000000)$$
 
-
-call InsProduccion
+call InsProduccion  (@idProduInterestelar, @idEstudioWarner, 'Christopher Nolan', 'Emma Thomas-Christopher Nolan-Lynda Obst', 'Mary Zophres', 'Jonathan Nolan-Christopher Nolan', 'Hoyte van Hoytema', 'Hans Zimmer', 165000000) $$
 
 -- Insert en Trailer:
 delimiter $$
@@ -105,15 +108,15 @@ begin
  insert into Trailer( idPelicula, idGenero, nombre, duracion)
  values(unidPelicula, unidGenero, unnombre, unaduracion);
  SET unidTrailer = LAST_INSERT_ID();
-end$$
+end $$
 
- CALL insTraieler (@idTrFrozen1, @idGFamiliar, @idPeliFrozen, 'Frozen una aventura congelada', '00:01:30') $$ -- trailer 1
- CALL insTraieler (@idTrFrozen1_2, @idGFamiliar, @idPeliFrozen, 'Frozen una aventura congelada', '00:02:25') $$ -- trailer 2
- CALL insTraieler (@idTrFrozen2, @idGFamiliar, @idPeliFrozen2, 'Frozen 2', '00:02:01') $$
-  CALL insTraieler (@idTrInterestelar_1, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:01:39') $$ -- trailer 1
- CALL insTraieler (@idTrInterestelar_2, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:20') $$ -- trailer 2
- CALL insTraieler (@idTrInterestelar_3, @idGFiccion1, @idPeliInterestelar, 'Interestelar', '00:02:26') $$-- trailer 3
- CALL insTraieler (@idTrInterestelar_4, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:19') $$ -- tailer 4
+ CALL InsTrailer (@idTrFrozen1, @idGFamiliar, @idPeliFrozen, 'Frozen una aventura congelada', '00:01:30') $$ -- trailer 1
+ CALL InsTrailer (@idTrFrozen1_2, @idGFamiliar, @idPeliFrozen, 'Frozen una aventura congelada', '00:02:25') $$ -- trailer 2
+ CALL InsTrailer (@idTrFrozen2, @idGFamiliar, @idPeliFrozen2, 'Frozen 2', '00:02:01') $$
+ CALL InsTrailer (@idTrInterestelar_1, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:01:39') $$ -- trailer 1
+ CALL InsTrailer (@idTrInterestelar_2, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:20') $$ -- trailer 2
+ CALL InsTrailer (@idTrInterestelar_3, @idGFiccion1, @idPeliInterestelar, 'Interestelar', '00:02:26') $$-- trailer 3
+ CALL InsTrailer (@idTrInterestelar_4, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:19') $$ -- tailer 4
 
 -- Insert en Genero:
 delimiter $$
@@ -139,7 +142,6 @@ Drop Procedure if EXISTS `InsPelicula` $$
 Create Procedure InsPelicula ( out unidPelicula mediumint unsigned,
  unidProduccion tinyint unsigned,
  unidGenero tinyint unsigned,
- unidActor tinyint unsigned,
  unnombre varchar(40),
  unestreno date,
  unadescripcion varchar (300),
@@ -148,26 +150,26 @@ Create Procedure InsPelicula ( out unidPelicula mediumint unsigned,
  unarestrincion tinyint unsigned ,
  unrecaudado bigint unsigned)
 Begin
- insert into Pelicula (idProduccion, idGenero, idActor, nombre, estreno, descripcion,
+ insert into Pelicula (idProduccion, idGenero, nombre, estreno, descripcion,
  calificacion, duracion, restrincion, recaudado)
 
- VALUES (unidProduccion, unidGenero, unidActor, unnombre, unestreno, unadescripcion,
+ VALUES (unidProduccion, unidGenero, unnombre, unestreno, unadescripcion,
  unacalificacion, unaduracion, unarestrincion, unrecaudado) ;
  SET unidPelicula = LAST_INSERT_ID();
 END $$
 
-call InsPelicula(@idPeliFrozen, @idProduFrozen, 'Frozen una aventura congelada', '2013-11-27', 'Anna y Kristoff desafían la naturaleza en una carrera para salvar a Elsa y al reino', 7.9, '01:42:00', 0, 1284219009) $$
- call InsPelicula(@idPeliFrozen2, @idProduFrozen2, 'Frozen 2', '2019-01-02', 'Elsa se aventura en lo desconocido para descubrir verdades del pasado', 8.0, '01:48:00', 0, 1453683476) $$
- call InsPelicula(@idPeliMegalodon, @idProduMegalodon, 'Megalodon', '2018-08-23', 'Jason Statham protagoniza este thriller submarino donde un grupo de científicos libera accidentalmente a un tiburón prehistórico gigante. Ahora el equipo debe arriesgar la vida en una carrera a contrarreloj para evitar una masacre masiva', 8.0, '01:53:00', 13, 530243742) $$
+call InsPelicula (@idPeliFrozen, @idProduFrozen, @idGFamiliar ,'Frozen una aventura congelada', '2013-11-27', 'Anna y Kristoff desafían la naturaleza en una carrera para salvar a Elsa y al reino', 7.9, '01:42:00', 0, 1284219009) $$
+ call InsPelicula (@idPeliFrozen2, @idProduFrozen2, @idGFamiliar ,'Frozen 2', '2019-01-02', 'Elsa se aventura en lo desconocido para descubrir verdades del pasado', 8.0, '01:48:00', 0, 1453683476) $$
+ /*call InsPelicula(@idPeliMegalodon, @idProduMegalodon, 'Megalodon', '2018-08-23', 'Jason Statham protagoniza este thriller submarino donde un grupo de científicos libera accidentalmente a un tiburón prehistórico gigante. Ahora el equipo debe arriesgar la vida en una carrera a contrarreloj para evitar una masacre masiva', 8.0, '01:53:00', 13, 530243742) $$
  call InsPelicula(@idPeliMegalodon2, @idProduMegalodon2, 'Megalodon II: El gran abismo', '2023-08-03', 'Jason Statham y Wu Jing, el ícono mundial de las artes marciales, se sumergen en aguas desconocidas y lideran un equipo de investigación que explorará las profundidades más abismales del océano', 9.0, '01:55:00', 13, 395000000) $$
  call InsPelicula(@idPeliGatoBotas, @idProduGatoBota, 'El gato con botas', '2011-12-07', 'El famoso gato tiene la aventura de su vida cuando une fuerzas con Humpty Dumpty y la gata Kitty para robarse al ganso de los huevos de oro', 8.0, '01:30:00', 0, 554000000) $$
- call InsPelicula(@idPeliGatoDeseo, @idProduGatoDeseo, 'El gato con botas: El último deseo', '2023-01-05', 'El Gato con Botas descubre que, debido a su pasión por la aventura, ha gastado ya 8 de sus 9 vidas. Por tanto, emprende un peligroso viaje en busca del legendario Último Deseo para solicitar que le restauren las vidas que ya perdió', 7.6, '01:40:00', 0, 485000000) $$
+ call InsPelicula(@idPeliGatoDeseo, @idProduGatoDeseo, 'El gato con botas: El último deseo', '2023-01-05', 'El Gato con Botas descubre que, debido a su pasión por la aventura, ha gastado ya 8 de sus 9 vidas. Por tanto, emprende un peligroso viaje en busca del legendario Último Deseo para solicitar que le restauren las vidas que ya perdió', 7.6, '01:40:00', 0, 485000000) $$*/
  
  -- Películas comunes
- call InsPelicula(@idPeliJack, @idProduJack, 'El extraño mundo de Jack', '1993-10-29', 'El rey de las calabazas, Jack Skellington, intenta apoderarse de la Navidad', 8.1, '01:19:00', 0, 95321981) $$
- call InsPelicula(@idPeliGuardianes, @idProduGuardianes, 'El origen de los guardianes', '2012-11-22', 'Generación tras generación, guardianes inmortales como Santa Claus, el Conejo de Pascua y la Hada de los Dientes protegen a los niños del mundo de la oscuridad y la desesperación', 7.3, '01:37:00', 0, 306941670) $$
- call InsPelicula(@idPeliInterestelar, @idProduInterestelar, 'Interestelar', '2014-11-06', 'Un equipo de exploradores viaja más allá de esta galaxia a través de un reciente descubierto agujero para descubrir si la humanidad tiene un futuro entre las estrellas', 9.0, '02:49:00', 13, 708000000) $$
- call InsPelicula(@idPeliChihiro ,@idProduChihiro, 'El viaje de Chihiro', '2003-07-17', 'Chihiro es una niña caprichosa que debe adentrarse en un mundo de fantasía para poder salvar a sus padres, convertidos en cerdos', 4.8, '02:05:00', 10, 31680000) $$
+ -- call InsPelicula(@idPeliJack, @idProduJack, 'El extraño mundo de Jack', '1993-10-29', 'El rey de las calabazas, Jack Skellington, intenta apoderarse de la Navidad', 8.1, '01:19:00', 0, 95321981) $$
+ -- call InsPelicula(@idPeliGuardianes, @idProduGuardianes, 'El origen de los guardianes', '2012-11-22', 'Generación tras generación, guardianes inmortales como Santa Claus, el Conejo de Pascua y la Hada de los Dientes protegen a los niños del mundo de la oscuridad y la desesperación', 7.3, '01:37:00', 0, 306941670) $$
+ call InsPelicula (@idPeliInterestelar, @idProduInterestelar, @idGFiccion ,'Interestelar', '2014-11-06', 'Un equipo de exploradores viaja más allá de esta galaxia a través de un reciente descubierto agujero para descubrir si la humanidad tiene un futuro entre las estrellas', 9.0, '02:49:00', 13, 708000000) $$
+ -- call InsPelicula(@idPeliChihiro ,@idProduChihiro, 'El viaje de Chihiro', '2003-07-17', 'Chihiro es una niña caprichosa que debe adentrarse en un mundo de fantasía para poder salvar a sus padres, convertidos en cerdos', 4.8, '02:05:00', 10, 31680000) $$
 
 
 -- Incrementa el presupuesto

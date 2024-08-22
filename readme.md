@@ -8,7 +8,6 @@ Pelicula{
 mediumint_unsigned idpelicula PK
 int_unsigned id_produccion FK
 tinyint_unsigned id_genero FK
-tinyint_unsigned id_actor  FK
 varchar(40) Nombre
 date Estreno
 varchar(300) Descripcion
@@ -21,7 +20,6 @@ Biging_Unsigned Recaudado
 
 Produccion{
 int_unsigned id_produccion PK
-mediumint_unsigned id_pelicula FK
 int_unsigned  id_Estudio Fk
 varchar(50) Director_General
 varchar(100) guion
@@ -58,7 +56,6 @@ Saga{
 
 Actor{
    int_unsigned id_actor PK
-   mediumint_unsigned idPelicula FK
    varchar(40) Nombre
    varchar(40) apellido
    date fecha_nacimiento

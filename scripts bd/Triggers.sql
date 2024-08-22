@@ -5,8 +5,8 @@
 
 
 Delimiter $$
-Drop trigger if EXISTS BefInsPresupuesto
-Create trigger BefInsPresupuesto before insert Produccion
+Drop trigger if EXISTS BefInsPresupuesto $$
+Create trigger BefInsPresupuesto before insert on Produccion
 FOR EACH ROW
 begin
        IF(new.Presupuesto < 0)
@@ -18,7 +18,8 @@ END $$
 
 /*evitar eliminar un estudio si cuenta con producciones*/
 
-
+Delimiter $$
+Drop trigger if EXISTS BefDelEstudio $$
 CREATE TRIGGER BefDelEstudio BEFORE DELETE ON Estudio
 FOR EACH ROW
        BEGIN
@@ -26,4 +27,4 @@ FOR EACH ROW
                SIGNAL SQLSTATE '45000'
                SET MESSAGE_TEXT = 'No se puede eliminar el estudio porque tiene producciones asociadas.';
        END IF;
-END;
+END $$

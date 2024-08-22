@@ -1,4 +1,4 @@
--- Active: 1691412339871@@127.0.0.1@3306
+-- Active: 1691412339871@@127.0.0.1@3306@Pelicula
 drop database if exists Pelicula;
 Create database Pelicula;
 Use Pelicula;
@@ -19,7 +19,6 @@ Use Pelicula;
      create table Produccion
   (
    idProduccion tinyint unsigned primary key AUTO_INCREMENT,
-   idPelicula mediumint unsigned,
    idEstudio tinyint unsigned,
    Director_General varchar (50) not null,
    Guion  varchar (100),
