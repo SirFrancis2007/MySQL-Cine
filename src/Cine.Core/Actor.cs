@@ -6,6 +6,6 @@ public class Actor
     private string Apellido;
     private DateOnly FNacimiento;
     private char sexo;
-    private string Nacionalidad;jkj
+    private string Nacionalidad;
     private string Rol; 
 }
