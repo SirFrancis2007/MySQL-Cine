@@ -1,11 +1,11 @@
 namespace Cine.Core;
 public class Actor
 {
-    private byte idActor;
-    private string Nombre;
-    private string Apellido;
-    private DateOnly FNacimiento;
-    private char sexo;
-    private string Nacionalidad;
-    private string Rol; 
+    public byte idActor { get ; set ; }
+    public string Nombre { get ; set ; }
+    public string Apellido { get ; set ; }
+    public DateOnly FNacimiento { get ; set ; }
+    public char sexo { get ; set ; }
+    public string Nacionalidad { get ; set ; }
+    public string Rol { get ; set ; }
 }

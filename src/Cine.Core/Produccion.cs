@@ -2,13 +2,14 @@ namespace Cine.Core;
 
 public class Produccion
 {
-    private byte idproduccion;
-    private byte idestudio;
-    private string director;
-    private string guion;
-    private string productor;
-    private string vestuario;
-    private string sonido;
-    private string Musica;
-    private float presupuesto;
+    public byte idproduccion { get ; set ;}
+    public byte idestudio { get ; set ; }
+    public string Productor { get ; set ; }
+    public string director { get ; set ;}
+    public string guion { get ; set ; }
+    public string vestuario { get ; set ; }
+    public string sonido { get ; set ; }
+    public string Musica { get ; set ; }
+    public float presupuesto { get ; set ; }
+
 }
