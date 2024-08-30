@@ -7,13 +7,22 @@ public class RepoActor:RepoBase, IRepoActor
 
     public void Alta(Actor elemento)
     {
-        // dar de alta los actores
-        throw new NotImplementedException();
+        var parametros = new DynamicParameters();
+        parametros.Add("xActor", ParameterDirection.Output);
+        parametros.Add("xNombre", elemento.Nombre);
+        parametros.Add("xfecha_nacimiento", elemento.FNacimiento);
+        parametros.Add("xsexo", elemento.sexo);
+        parametros.Add("xnacionalidad", elemento.Nacionalidad);
+        parametros.Add("xrol", elemento.Rol);        
+
+        elemento.idActor = parametros.Get<byte>("xidActor");
     }
 
     public IEnumerable<Actor> TraerElementos()
     {
         //Hacer la query de select actores.
-        throw new NotImplementedException();
+        var query = @"SELECT * FROM Actor";
+        var Actor = Conexion.Query<Actor>(query);        
+        return Actor;
     }
 }

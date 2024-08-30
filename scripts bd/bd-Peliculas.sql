@@ -60,7 +60,6 @@ Use Pelicula;
  sexo char(1) not null,
  nacionalidad varchar(40) not null,
  rol varchar (40) not null,
- personaje varchar(40) not null,
  CONSTRAINT FK_Pelicula_Actor FOREIGN KEY (idPelicula)
     REFERENCES  Pelicula (idPelicula)
  );
@@ -68,7 +67,8 @@ create table Actor_Pelicula
 (
 idActor tinyint unsigned,
 idPelicula mediumint unsigned,
-CONSTRAINT PK_Actor_Pelicula PRIMARY KEY (idActor ,idPelicula),
+personaje VARCHAR(50) not null;
+CONSTRAINT PK_Actor_Pelicula PRIMARY KEY (idActor ,idPelicula, personaje),
 CONSTRAINT FK_Actor_actor FOREIGN KEY (idActor)
    REFERENCES Actor (idActor) ,
 CONSTRAINT FK_Pelicula_Pelicula FOREIGN KEY (idPelicula)

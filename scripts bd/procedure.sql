@@ -12,49 +12,48 @@ DELIMITER $$
 /*Procedure de alta actor*/
 
 drop procedure if exists InsActor $$
-Create procedure InsActor (out xidActor tinyint unsigned,
- xidPelicula mediumint unsigned,
+Create procedure InsActor (out xidActor tinyint unsigned),
  xNombre varchar(40),
  xApellido varchar(40),
  xfecha_nacimiento DATE,
  xsexo char(1),
  xnacionalidad varchar(40),
  xrol varchar (40),
- xpersonaje varchar(40))
+ -- xpersonaje varchar(40)) Lo ubicamos en el insert de muchos a muchos 
 begin
- insert into Actor (idPelicula, Nombre, Apellido, fecha_nacimiento, sexo, nacionalidad, rol, personaje)
- VALUES(xidPelicula, xNombre, xApellido, xfecha_nacimiento, xsexo, xnacionalidad, xrol, xpersonaje);
+ insert into Actor (Nombre, Apellido, fecha_nacimiento, sexo, nacionalidad, rol)
+ VALUES(xNombre, xApellido, xfecha_nacimiento, xsexo, xnacionalidad, xrol);
  SET xidActor = LAST_INSERT_ID();
 END $$
 
 --Frozen 1
-CALL InsActor (@idActorKristen, @idPeliFrozen, 'Kristen ', 'Bell', '1980-07-18', 'F', 'Estadounidense', 'Actriz de voz', 'Anna') $$
-CALL InsActor (@idActorIdina, @idPeliFrozen, 'Idina ', 'Menzel', '1971-05-30', 'F', 'Estadounidense', 'Actriz de voz', 'Elsa') $$
-CALL InsActor (@idActorJonathan, @idPeliFrozen, 'Jonathan ', 'Groff', '1995-03-26', 'M', 'Estadounidense', 'Actor de voz', 'Kristoff') $$
-CALL InsActor (@idActorJosh, @idPeliFrozen, 'Josh ', 'Gad', '1981-02-23', 'M', 'Estadounidense', 'Actor de voz', 'Olaf') $$
-CALL InsActor (@idActorAlan, @idPeliFrozen, 'Alan ', 'Tudyk', '1971-03-16', 'M', 'Estadounidense', 'Actor de voz', 'Duque Weselton') $$
-CALL InsActor (@idActorEva, @idPeliFrozen, 'Eva ', 'Bella', '2002-06-04', 'F', 'Estadounidense', 'Actriz de voz', 'Joven Elsa') $$
-CALL InsActor (@idActorLivy, @idPeliFrozen, 'Livy ', 'Stubenraunch', '2005-04-18', 'F', 'Estadounidense', 'Actriz de voz', 'Joven Anna') $$
-CALL InsActor (@idActorSantino, @idPeliFrozen, 'Santino ', 'Fontana', '1982-03-21', 'M', 'Estadounidense', 'Actor de voz', 'Hans') $$
+CALL InsActor (@idActorKristen,  'Kristen ', 'Bell', '1980-07-18', 'F', 'Estadounidense', 'Actriz de voz') $$
+CALL InsActor (@idActorIdina,  'Idina ', 'Menzel', '1971-05-30', 'F', 'Estadounidense', 'Actriz de voz') $$
+CALL InsActor (@idActorJonathan,  'Jonathan ', 'Groff', '1995-03-26', 'M', 'Estadounidense', 'Actor de voz') $$
+CALL InsActor (@idActorJosh,  'Josh ', 'Gad', '1981-02-23', 'M', 'Estadounidense', 'Actor de voz') $$
+CALL InsActor (@idActorAlan,  'Alan ', 'Tudyk', '1971-03-16', 'M', 'Estadounidense', 'Actor de voz') $$
+CALL InsActor (@idActorEva,  'Eva ', 'Bella', '2002-06-04', 'F', 'Estadounidense', 'Actriz de voz') $$
+CALL InsActor (@idActorLivy,  'Livy ', 'Stubenraunch', '2005-04-18', 'F', 'Estadounidense', 'Actriz de voz') $$
+CALL InsActor (@idActorSantino,  'Santino ', 'Fontana', '1982-03-21', 'M', 'Estadounidense', 'Actor de voz') $$
  -- Fronzen 2
- CALL InsActor(@idActorSterling, @idPeliFrozen2, 'Sterling ', 'Brown', '1976-04-05', 'M', 'Estadounidense', 'Actor de voz', 'Matthias' ) $$
- CALL InsActor(@idActorEvan, @idPeliFrozen2, 'Evan ', 'Wood', '1987-09-07', 'F', 'Estadounidense', 'Actriz de voz', 'Iduna' ) $$
- CALL InsActor(@idActorMartha, @idPeliFrozen2, 'Martha ', 'Plimpton', '1970-11-16', 'F', 'Estadounidense', 'Actriz de voz', 'Yelana' ) $$
- CALL InsActor(@idActorRachel, @idPeliFrozen2, 'Rachel ', 'Matthews', '1993-10-25', 'F', 'Estadounidense', 'Actriz de voz', 'Honeymaren' ) $$
+ CALL InsActor(@idActorSterling,, 'Sterling ', 'Brown', '1976-04-05', 'M', 'Estadounidense', 'Actor de voz' ) $$
+ CALL InsActor(@idActorEvan,, 'Evan ', 'Wood', '1987-09-07', 'F', 'Estadounidense', 'Actriz de voz') $$
+ CALL InsActor(@idActorMartha,, 'Martha ', 'Plimpton', '1970-11-16', 'F', 'Estadounidense', 'Actriz de voz') $$
+ CALL InsActor(@idActorRachel,, 'Rachel ', 'Matthews', '1993-10-25', 'F', 'Estadounidense', 'Actriz de voz') $$
  -- Interestelar
- CALL InsActor(@idActorMatthew, @idPeliInterestelar, 'Matthew ', 'McConaughey', '1969-11-04', 'M', 'Estadounidense', 'Actor Live action', 'Joseph Cooper') $$
- CALL InsActor(@idActorAnne, @idPeliInterestelar, 'Anne ', 'Hathaway', '1982-11-12', 'F', 'Estadounidense', 'Actriz Live action', 'Amelia Brand') $$
- CALL InsActor(@idActorFoy, @idPeliInterestelar, 'Mackenzie ', 'Foy', '2000-11-10', 'F', 'Estadounidense', 'Actriz Live action', 'Murph joven') $$
- CALL InsActor(@idActorJessica, @idPeliInterestelar, 'Jessica ', 'Chastain', '1977-03-24', 'F', 'Estadounidense', 'Actriz Live action', 'Murph adulta') $$
- CALL InsActor(@idActorMichael, @idPeliInterestelar, 'Michael ', 'Caine', '1933-03-14', 'M', 'Británico', 'Actor Live Action', 'Profesor Brand') $$
- CALL InsActor(@idActorCasey, @idPeliInterestelar, 'Casey', 'Affleck', '1975-08-12', 'M', 'Estadounidense', 'Actor Live Action', 'Tom') $$
- CALL InsActor(@idActorMatt, @idPeliInterestelar, 'Matt', 'Damon', '1970-10-08', 'M', 'Estadounidense', 'Actor Live Action', 'Dr. Mann') $$
- CALL InsActor(@idActorLithgow, @idPeliInterestelar, 'John', 'Lithgow', '1945-10-19', 'M', 'Estadounidense', 'Actor Live Action', 'Donald') $$
- CALL InsActor(@idActorEllen, @idPeliInterestelar, 'Ellen', 'Burstyn', '1932-12-07', 'F', 'Estadounidense', 'Actriz Live action', 'Murph anciana') $$
- CALL InsActor(@idActorDavid, @idPeliInterestelar, 'David', 'Gyasi', '1980-01-02', 'M', 'Británica', 'Actor Live Action', 'Romilly') $$
- CALL InsActor(@idActorTopher, @idPeliInterestelar, 'Topher', 'Grace', '1978-07-12', 'M', 'Estadounidense', 'Actor Live Action', 'Getty') $$
- CALL InsActor(@idActorChalamet, @idPeliInterestelar, 'Timothée', 'Chalamet', '1995-12-27', 'M', 'Estadounidense', 'Actor Live Action', 'Tom joven') $$
- CALL InsActor(@idActorStewart, @idPeliInterestelar, 'Josh', 'Stewart', '1977-02-06', 'M', 'Estadounidense', 'Actor de voz', 'CASE') $$
+ CALL InsActor(@idActorMatthew, 'Matthew ', 'McConaughey', '1969-11-04', 'M', 'Estadounidense', 'Actor Live action') $$
+ CALL InsActor(@idActorAnne, 'Anne ', 'Hathaway', '1982-11-12', 'F', 'Estadounidense', 'Actriz Live action') $$
+ CALL InsActor(@idActorFoy, 'Mackenzie ', 'Foy', '2000-11-10', 'F', 'Estadounidense', 'Actriz Live action') $$
+ CALL InsActor(@idActorJessica, 'Jessica ', 'Chastain', '1977-03-24', 'F', 'Estadounidense', 'Actriz Live action') $$
+ CALL InsActor(@idActorMichael, 'Michael ', 'Caine', '1933-03-14', 'M', 'Británico', 'Actor Live Action') $$
+ CALL InsActor(@idActorCasey, 'Casey', 'Affleck', '1975-08-12', 'M', 'Estadounidense', 'Actor Live Action') $$
+ CALL InsActor(@idActorMatt, 'Matt', 'Damon', '1970-10-08', 'M', 'Estadounidense', 'Actor Live Action') $$
+ CALL InsActor(@idActorLithgow, 'John', 'Lithgow', '1945-10-19', 'M', 'Estadounidense', 'Actor Live Action') $$
+ CALL InsActor(@idActorEllen, 'Ellen', 'Burstyn', '1932-12-07', 'F', 'Estadounidense', 'Actriz Live action') $$
+ CALL InsActor(@idActorDavid, 'David', 'Gyasi', '1980-01-02', 'M', 'Británica', 'Actor Live Action') $$
+ CALL InsActor(@idActorTopher, 'Topher', 'Grace', '1978-07-12', 'M', 'Estadounidense', 'Actor Live Action') $$
+ CALL InsActor(@idActorChalamet, 'Timothée', 'Chalamet', '1995-12-27', 'M', 'Estadounidense', 'Actor Live Action') $$
+ CALL InsActor(@idActorStewart, 'Josh', 'Stewart', '1977-02-06', 'M', 'Estadounidense', 'Actor de voz') $$
 
 DELIMITER $$
 /*procedure de saga */
@@ -216,3 +215,5 @@ call InsEstudio (@idEstudioDisney, 'Disney', '1923-10-23'           ) $$
 call InsEstudio (@idEstudioDream, 'DreamWorld', '1994-10-12'        ) $$
 call InsEstudio (@idEstudioWarner, 'Warner Bros', '1923-04-04'      ) $$
 call InsEstudio (@idEstudioGhibli, 'Studio Ghibli', '1985-06-15'    ) $$
+
+

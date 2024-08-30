@@ -34,10 +34,10 @@ START TRANSACTION ;
  -- (@idProduChihiro, @idEstudioGhibli, 'Hayao Miyazaki', 'Toshio Suzuki', null, 'Hayao Miyazaki', 'Joe Hisaishi', 'Takatsugu Muramatsu-Yuji Nomi', 19000000)
 ;
  
- insert into Pelicula (idPelicula, idProduccion, idGenero, nombre, estreno, descripcion, calificacion, duracion, restrincion, recaudado)
+ insert into Pelicula (idPelicula, idProduccion, nombre, estreno, descripcion, calificacion, duracion, restrincion, recaudado)
  values -- Sagas
- (@idPeliFrozen, @idProduFrozen, @idGFantasia ,'Frozen una aventura congelada', '2013-11-27', 'Anna y Kristoff desafían la naturaleza en una carrera para salvar a Elsa y al reino', 7.9, '01:42:00', 0, 1284219009),
- (@idPeliFrozen2, @idProduFrozen2, @idGFantasia ,'Frozen 2', '2019-01-02', 'Elsa se aventura en lo desconocido para descubrir verdades del pasado', 8.0, '01:48:00', 0, 1453683476),
+ (@idPeliFrozen, @idProduFrozen ,'Frozen una aventura congelada', '2013-11-27', 'Anna y Kristoff desafían la naturaleza en una carrera para salvar a Elsa y al reino', 7.9, '01:42:00', 0, 1284219009),
+ (@idPeliFrozen2, @idProduFrozen2 ,'Frozen 2', '2019-01-02', 'Elsa se aventura en lo desconocido para descubrir verdades del pasado', 8.0, '01:48:00', 0, 1453683476),
  -- (@idPeliMegalodon, @idProduMegalodon, 'Megalodon', '2018-08-23', 'Jason Statham protagoniza este thriller submarino donde un grupo de científicos libera accidentalmente a un tiburón prehistórico gigante. Ahora el equipo debe arriesgar la vida en una carrera a contrarreloj para evitar una masacre masiva', 8.0, '01:53:00', 13, 530243742),
  -- (@idPeliMegalodon2, @idProduMegalodon2, 'Megalodon II: El gran abismo', '2023-08-03', 'Jason Statham y Wu Jing, el ícono mundial de las artes marciales, se sumergen en aguas desconocidas y lideran un equipo de investigación que explorará las profundidades más abismales del océano', 9.0, '01:55:00', 13, 395000000),
  -- (@idPeliGatoBotas, @idProduGatoBota, 'El gato con botas', '2011-12-07', 'El famoso gato tiene la aventura de su vida cuando une fuerzas con Humpty Dumpty y la gata Kitty para robarse al ganso de los huevos de oro', 8.0, '01:30:00', 0, 554000000),
@@ -46,40 +46,40 @@ START TRANSACTION ;
  -- Películas comunes
  --(@idPeliJack, @idProduJack, 'El extraño mundo de Jack', '1993-10-29', 'El rey de las calabazas, Jack Skellington, intenta apoderarse de la Navidad', 8.1, '01:19:00', 0, 95321981),
  -- (@idPeliGuardianes, @idProduGuardianes, 'El origen de los guardianes', '2012-11-22', 'Generación tras generación, guardianes inmortales como Santa Claus, el Conejo de Pascua y la Hada de los Dientes protegen a los niños del mundo de la oscuridad y la desesperación', 7.3, '01:37:00', 0, 306941670),*/
- (@idPeliInterestelar, @idProduInterestelar, @idGFiccion ,'Interestelar', '2014-11-06', 'Un equipo de exploradores viaja más allá de esta galaxia a través de un reciente descubierto agujero para descubrir si la humanidad tiene un futuro entre las estrellas', 9.0, '02:49:00', 13, 708000000),
+ (@idPeliInterestelar, @idProduInterestelar,'Interestelar', '2014-11-06', 'Un equipo de exploradores viaja más allá de esta galaxia a través de un reciente descubierto agujero para descubrir si la humanidad tiene un futuro entre las estrellas', 9.0, '02:49:00', 13, 708000000),
  -- (@idPeliChihiro ,@idProduChihiro, 'El viaje de Chihiro', '2003-07-17', 'Chihiro es una niña caprichosa que debe adentrarse en un mundo de fantasía para poder salvar a sus padres, convertidos en cerdos', 4.8, '02:05:00', 10, 31680000)
 ;
 
  
- insert into Actor (idActor, idPelicula, Nombre, Apellido, fecha_nacimiento, sexo, nacionalidad, Rol, Personaje)
+ insert into Actor (idActor, idPelicula, Nombre, Apellido, fecha_nacimiento, sexo, nacionalidad, Rol)
  Values -- Frozen 1
- (@idActorKristen, @idPeliFrozen, 'Kristen ', 'Bell', '1980-07-18', 'F', 'Estadounidense', 'Actriz de voz', 'Anna'),
- (@idActorIdina, @idPeliFrozen, 'Idina ', 'Menzel', '1971-05-30', 'F', 'Estadounidense', 'Actriz de voz', 'Elsa'),
- (@idActorJonathan, @idPeliFrozen, 'Jonathan ', 'Groff', '1995-03-26', 'M', 'Estadounidense', 'Actor de voz', 'Kristoff'),
+ (@idActorKristen, @idPeliFrozen, 'Kristen ', 'Bell', '1980-07-18', 'F', 'Estadounidense', 'Actriz de voz'),
+ (@idActorIdina, @idPeliFrozen, 'Idina ', 'Menzel', '1971-05-30', 'F', 'Estadounidense', 'Actriz de voz'),
+ (@idActorJonathan, @idPeliFrozen, 'Jonathan ', 'Groff', '1995-03-26', 'M', 'Estadounidense', 'Actor de voz'),
  (@idActorJosh, @idPeliFrozen, 'Josh ', 'Gad', '1981-02-23', 'M', 'Estadounidense', 'Actor de voz', 'Olaf'),
- (@idActorAlan, @idPeliFrozen, 'Alan ', 'Tudyk', '1971-03-16', 'M', 'Estadounidense', 'Actor de voz', 'Duque Weselton'),
- (@idActorEva, @idPeliFrozen, 'Eva ', 'Bella', '2002-06-04', 'F', 'Estadounidense', 'Actriz de voz', 'Joven Elsa'),
- (@idActorLivy, @idPeliFrozen, 'Livy ', 'Stubenraunch', '2005-04-18', 'F', 'Estadounidense', 'Actriz de voz', 'Joven Anna'),
- (@idActorSantino, @idPeliFrozen, 'Santino ', 'Fontana', '1982-03-21', 'M', 'Estadounidense', 'Actor de voz', 'Hans'),
+ (@idActorAlan, @idPeliFrozen, 'Alan ', 'Tudyk', '1971-03-16', 'M', 'Estadounidense', 'Actor de voz'),
+ (@idActorEva, @idPeliFrozen, 'Eva ', 'Bella', '2002-06-04', 'F', 'Estadounidense', 'Actriz de voz'),
+ (@idActorLivy, @idPeliFrozen, 'Livy ', 'Stubenraunch', '2005-04-18', 'F', 'Estadounidense', 'Actriz de voz'),
+ (@idActorSantino, @idPeliFrozen, 'Santino ', 'Fontana', '1982-03-21', 'M', 'Estadounidense', 'Actor de voz'),
  -- Fronzen 2
- (@idActorSterling, @idPeliFrozen2, 'Sterling ', 'Brown', '1976-04-05', 'M', 'Estadounidense', 'Actor de voz', 'Matthias' ),
- (@idActorEvan, @idPeliFrozen2, 'Evan ', 'Wood', '1987-09-07', 'F', 'Estadounidense', 'Actriz de voz', 'Iduna' ),
- (@idActorMartha, @idPeliFrozen2, 'Martha ', 'Plimpton', '1970-11-16', 'F', 'Estadounidense', 'Actriz de voz', 'Yelana' ),
- (@idActorRachel, @idPeliFrozen2, 'Rachel ', 'Matthews', '1993-10-25', 'F', 'Estadounidense', 'Actriz de voz', 'Honeymaren' ),
+ (@idActorSterling, @idPeliFrozen2, 'Sterling ', 'Brown', '1976-04-05', 'M', 'Estadounidense', 'Actor de voz'),
+ (@idActorEvan, @idPeliFrozen2, 'Evan ', 'Wood', '1987-09-07', 'F', 'Estadounidense', 'Actriz de voz'),
+ (@idActorMartha, @idPeliFrozen2, 'Martha ', 'Plimpton', '1970-11-16', 'F', 'Estadounidense', 'Actriz de voz'),
+ (@idActorRachel, @idPeliFrozen2, 'Rachel ', 'Matthews', '1993-10-25', 'F', 'Estadounidense', 'Actriz de voz'),
  -- Interestelar
- (@idActorMatthew, @idPeliInterestelar, 'Matthew ', 'McConaughey', '1969-11-04', 'M', 'Estadounidense', 'Actor Live action', 'Joseph Cooper'),
- (@idActorAnne, @idPeliInterestelar, 'Anne ', 'Hathaway', '1982-11-12', 'F', 'Estadounidense', 'Actriz Live action', 'Amelia Brand'),
- (@idActorFoy, @idPeliInterestelar, 'Mackenzie ', 'Foy', '2000-11-10', 'F', 'Estadounidense', 'Actriz Live action', 'Murph joven'),
- (@idActorJessica, @idPeliInterestelar, 'Jessica ', 'Chastain', '1977-03-24', 'F', 'Estadounidense', 'Actriz Live action', 'Murph adulta'),
- (@idActorMichael, @idPeliInterestelar, 'Michael ', 'Caine', '1933-03-14', 'M', 'Británico', 'Actor Live Action', 'Profesor Brand'),
- (@idActorCasey, @idPeliInterestelar, 'Casey', 'Affleck', '1975-08-12', 'M', 'Estadounidense', 'Actor Live Action', 'Tom'),
- (@idActorMatt, @idPeliInterestelar, 'Matt', 'Damon', '1970-10-08', 'M', 'Estadounidense', 'Actor Live Action', 'Dr. Mann'),
- (@idActorLithgow, @idPeliInterestelar, 'John', 'Lithgow', '1945-10-19', 'M', 'Estadounidense', 'Actor Live Action', 'Donald'),
- (@idActorEllen, @idPeliInterestelar, 'Ellen', 'Burstyn', '1932-12-07', 'F', 'Estadounidense', 'Actriz Live action', 'Murph anciana'),
- (@idActorDavid, @idPeliInterestelar, 'David', 'Gyasi', '1980-01-02', 'M', 'Británica', 'Actor Live Action', 'Romilly'),
- (@idActorTopher, @idPeliInterestelar, 'Topher', 'Grace', '1978-07-12', 'M', 'Estadounidense', 'Actor Live Action', 'Getty'),
- (@idActorChalamet, @idPeliInterestelar, 'Timothée', 'Chalamet', '1995-12-27', 'M', 'Estadounidense', 'Actor Live Action', 'Tom joven'),
- (@idActorStewart, @idPeliInterestelar, 'Josh', 'Stewart', '1977-02-06', 'M', 'Estadounidense', 'Actor de voz', 'CASE') --Fijarse en ponerle la coma una vez verificado el Full test
+ (@idActorMatthew, @idPeliInterestelar, 'Matthew ', 'McConaughey', '1969-11-04', 'M', 'Estadounidense', 'Actor Live action'),
+ (@idActorAnne, @idPeliInterestelar, 'Anne ', 'Hathaway', '1982-11-12', 'F', 'Estadounidense', 'Actriz Live action'),
+ (@idActorFoy, @idPeliInterestelar, 'Mackenzie ', 'Foy', '2000-11-10', 'F', 'Estadounidense', 'Actriz Live action'),
+ (@idActorJessica, @idPeliInterestelar, 'Jessica ', 'Chastain', '1977-03-24', 'F', 'Estadounidense', 'Actriz Live action'),
+ (@idActorMichael, @idPeliInterestelar, 'Michael ', 'Caine', '1933-03-14', 'M', 'Británico', 'Actor Live Action'),
+ (@idActorCasey, @idPeliInterestelar, 'Casey', 'Affleck', '1975-08-12', 'M', 'Estadounidense', 'Actor Live Action'),
+ (@idActorMatt, @idPeliInterestelar, 'Matt', 'Damon', '1970-10-08', 'M', 'Estadounidense', 'Actor Live Action'),
+ (@idActorLithgow, @idPeliInterestelar, 'John', 'Lithgow', '1945-10-19', 'M', 'Estadounidense', 'Actor Live Action'),
+ (@idActorEllen, @idPeliInterestelar, 'Ellen', 'Burstyn', '1932-12-07', 'F', 'Estadounidense', 'Actriz Live action'),
+ (@idActorDavid, @idPeliInterestelar, 'David', 'Gyasi', '1980-01-02', 'M', 'Británica', 'Actor Live Action'),
+ (@idActorTopher, @idPeliInterestelar, 'Topher', 'Grace', '1978-07-12', 'M', 'Estadounidense', 'Actor Live Action'),
+ (@idActorChalamet, @idPeliInterestelar, 'Timothée', 'Chalamet', '1995-12-27', 'M', 'Estadounidense', 'Actor Live Action'),
+ (@idActorStewart, @idPeliInterestelar, 'Josh', 'Stewart', '1977-02-06', 'M', 'Estadounidense', 'Actor de voz') --Fijarse en ponerle la coma una vez verificado el Full test
  -- El viaje de Chihiro
  /*(@idActorMiyu, @idPeliChihiro, 'Hirino', 'Miyu', '1998-02-19', 'M', 'Japonés', 'Actor de voz', 'Haku'),
  (@idActorTamai, @idPeliChihiro, 'Yoomi', 'Tamai', '1977-08-06', 'M', 'Japonesa', 'Actor de voz', 'Lin'),
@@ -162,45 +162,45 @@ START TRANSACTION ;
  -- (@idTrGuardianes_2, @idGFantasia, @idPeliGuardianes, 'El origen de los guardianes', '00:02:30'),
  (@idTrInterestelar_1, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:01:39'), -- trailer 1
  (@idTrInterestelar_2, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:20'), -- trailer 2
- (@idTrInterestelar_3, @idGFiccion1, @idPeliInterestelar, 'Interestelar', '00:02:26'), -- trailer 3
+ (@idTrInterestelar_3, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:26'), -- trailer 3
  (@idTrInterestelar_4, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:19') -- tailer 4 Fijarse en ponerle la coma una vez verificado el Full test
  -- (@idTrChihiro, @idGFantasia, @idPeliChihiro, 'El viaje de Chihiro', '00:01:37')
 ;
  
- insert into Actor_Pelicula (idActor, idPelicula)
+ insert into Actor_Pelicula (idActor, idPelicula, Personaje)
  values
  -- Frozen 1
- (@idActorKristen, @idPeliFrozen),
- (@idActorIdina, @idPeliFrozen),
- (@idActorJonathan, @idPeliFrozen),
- (@idActorJosh, @idPeliFrozen),
- (@idActorAlan, @idPeliFrozen),
- (@idActorEva, @idPeliFrozen),
- (@idActorLivy, @idPeliFrozen),
- (@idActorSantino, @idPeliFrozen),
+ (@idActorKristen, @idPeliFrozen, "Anna"),
+ (@idActorIdina, @idPeliFrozen, "Elsa"),
+ (@idActorJonathan, @idPeliFrozen, "Kristoff"),
+ (@idActorJosh, @idPeliFrozen, "Olaf"),
+ (@idActorAlan, @idPeliFrozen, "Duque Weselton"),
+ (@idActorEva, @idPeliFrozen, "Joven Elsa"),
+ (@idActorLivy, @idPeliFrozen, "Joven Anna"),
+ (@idActorSantino, @idPeliFrozen, "Hans"),
  -- Frozen 2
- (@idActorKristen, @idPeliFrozen2),
- (@idActorIdina, @idPeliFrozen2),
- (@idActorJonathan, @idPeliFrozen2),
- (@idActorJosh, @idPeliFrozen2),
- (@idActorSterling, @idPeliFrozen2),
- (@idActorEvan, @idPeliFrozen2),
- (@idActorMartha, @idPeliFrozen2),
- (@idActorRachel, @idPeliFrozen2),
+ (@idActorKristen, @idPeliFrozen2, "Anna"),
+ (@idActorIdina, @idPeliFrozen2, "Elsa"),
+ (@idActorJonathan, @idPeliFrozen2, "Kristoff"),
+ (@idActorJosh, @idPeliFrozen2, "Olaf"),
+ (@idActorSterling, @idPeliFrozen2, "Matthias"),
+ (@idActorEvan, @idPeliFrozen2, "Iduna"),
+ (@idActorMartha, @idPeliFrozen2, "Yelana"),
+ (@idActorRachel, @idPeliFrozen2, "Honeymaren"),
  -- Interesellar
- (@idActorMatthew, @idPeliInterestelar),
- (@idActorAnne, @idPeliInterestelar),
- (@idActorFoy, @idPeliInterestelar),
- (@idActorJessica, @idPeliInterestelar),
- (@idActorMichael, @idPeliInterestelar),
- (@idActorCasey, @idPeliInterestelar),
- (@idActorMatt, @idPeliInterestelar),
- (@idActorLithgow, @idPeliInterestelar),
- (@idActorEllen, @idPeliInterestelar),
- (@idActorDavid, @idPeliInterestelar),
- (@idActorTopher, @idPeliInterestelar),
- (@idActorChalamet, @idPeliInterestelar),
- (@idActorStewart, @idPeliInterestelar),
+ (@idActorMatthew, @idPeliInterestelar, "Joseph Coope"),
+ (@idActorAnne, @idPeliInterestelar, "Amelia Brand"),
+ (@idActorFoy, @idPeliInterestelar, "Murph joven"),
+ (@idActorJessica, @idPeliInterestelar, "Murph adulta"),
+ (@idActorMichael, @idPeliInterestelar, "Profesor Brand"),
+ (@idActorCasey, @idPeliInterestelar, "Tom"),
+ (@idActorMatt, @idPeliInterestelar, "Dr. Mann"),
+ (@idActorLithgow, @idPeliInterestelar, "Donald"),
+ (@idActorEllen, @idPeliInterestelar, "Murph anciana"),
+ (@idActorDavid, @idPeliInterestelar, "Romilly"),
+ (@idActorTopher, @idPeliInterestelar, "Getty"),
+ (@idActorChalamet, @idPeliInterestelar, "Tom joven"),
+ (@idActorStewart, @idPeliInterestelar, "CASE"),
  /* El viaje de Chihiro
  (@idActorRumi, @idPeliChihiro),
  (@idActorMiyu, @idPeliChihiro),
