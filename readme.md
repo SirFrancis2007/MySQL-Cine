@@ -7,7 +7,6 @@ Pelicula{
 
 mediumint_unsigned idpelicula PK
 int_unsigned id_produccion FK
-tinyint_unsigned id_genero FK
 varchar(40) Nombre
 date Estreno
 varchar(300) Descripcion

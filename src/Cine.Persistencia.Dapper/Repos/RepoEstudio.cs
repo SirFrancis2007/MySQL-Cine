@@ -10,6 +10,7 @@ public class RepoEstudio:RepoBase, IRepoEstudio
         var parametros = new DynamicParameters();
         parametros.Add("xidEstudio", ParameterDirection.Output);
         parametros.Add("xnombre", estudio.Nombre);
+        parametros.Add("xfundacion", estudio.Fundacion);
 
         estudio.IdEstudio = parametros.Get<byte>("xidEstudio");    
     }

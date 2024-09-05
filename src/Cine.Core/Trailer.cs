@@ -2,9 +2,14 @@ namespace Cine.Core;
 
 public class Trailer
 {
-    public Trailer()
+    public Trailer( byte idTrailer , byte idPelicula , byte idGenero , Genero genero , string nombre , TimeOnly duracion )
     {
-        
+        IdTrailer = IdTrailer;
+        IdPelicula = idPelicula;
+        IdGenero = idGenero ;
+        Genero = genero ;
+        Nombre = nombre ;
+        Duracion = duracion ;
     }
 
     public byte IdTrailer { get ; set ; }

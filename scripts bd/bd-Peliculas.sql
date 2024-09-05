@@ -1,7 +1,7 @@
--- Active: 1691412339871@@127.0.0.1@3306@Pelicula
-drop database if exists Pelicula;
-Create database Pelicula;
-Use Pelicula;
+-- Active: 1691412339871@@127.0.0.1@3306@5to_Pelicula
+drop database if exists 5to_Pelicula;
+Create database 5to_Pelicula;
+Use 5to_Pelicula;
   create table Genero
  (
   idGenero tinyint unsigned AUTO_INCREMENT primary key,
@@ -33,10 +33,8 @@ Use Pelicula;
  
   create table Pelicula
   (
-  idPelicula mediumint unsigned AUTO_INCREMENT primary key, 
+  idPelicula mediumint unsigned AUTO_INCREMENT primary key,
   idProduccion tinyint unsigned,
-  idGenero tinyint unsigned,
-  idActor tinyint unsigned,
   nombre varchar(40) not null,
   estreno date not null,
   descripcion varchar (300),
@@ -44,8 +42,6 @@ Use Pelicula;
   duracion Time not null,
   restrincion tinyint unsigned ,
   recaudado bigint unsigned,
-  CONSTRAINT FK_Pelicula_Genero FOREIGN KEY (idGenero)
-       REFERENCES  Genero (idGenero),
    CONSTRAINT FK_Pelicula_Produccion FOREIGN KEY (idProduccion)
        REFERENCES  Produccion (idProduccion)
   );
@@ -53,21 +49,19 @@ Use Pelicula;
   Create table Actor
 (
  idActor tinyint unsigned primary key AUTO_INCREMENT,
- idPelicula mediumint unsigned,
  Nombre varchar(40) not null,
  Apellido varchar(40) not null,
  fecha_nacimiento date not null,
  sexo char(1) not null,
  nacionalidad varchar(40) not null,
- rol varchar (40) not null,
- CONSTRAINT FK_Pelicula_Actor FOREIGN KEY (idPelicula)
-    REFERENCES  Pelicula (idPelicula)
+ rol varchar (40) not null
  );
+ 
 create table Actor_Pelicula
 (
 idActor tinyint unsigned,
 idPelicula mediumint unsigned,
-personaje VARCHAR(50) not null;
+personaje VARCHAR(50) not null,
 CONSTRAINT PK_Actor_Pelicula PRIMARY KEY (idActor ,idPelicula, personaje),
 CONSTRAINT FK_Actor_actor FOREIGN KEY (idActor)
    REFERENCES Actor (idActor) ,

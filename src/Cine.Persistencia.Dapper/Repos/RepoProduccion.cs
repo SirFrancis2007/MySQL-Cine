@@ -12,18 +12,18 @@ public class RepoProduccion : RepoBase, IRepoProduccion
     {
         var parametros = new DynamicParameters();
         parametros.Add("unidProduccion", ParameterDirection.Output);
-        parametros.Add("unidEstudio", produccion.idestudio);
-        parametros.Add("unDirector_General", produccion.director);
-        parametros.Add("unGuiom", produccion.guion);
+        parametros.Add("unidEstudio", produccion.IdEstudio);
+        parametros.Add("unDirector_General", produccion.Director);
+        parametros.Add("unGuiom", produccion.Guion);
         parametros.Add("unProductor", produccion.Productor);
-        parametros.Add("unVestuario", produccion.vestuario);
-        parametros.Add("unSonido", produccion.sonido);
+        parametros.Add("unVestuario", produccion.Vestuario);
+        parametros.Add("unSonido", produccion.Sonido);
         parametros.Add("unaMusica", produccion.Musica);
-        parametros.Add("unPresupuesto", produccion.presupuesto);
+        parametros.Add("unPresupuesto", produccion.Presupuesto);
 
         Conexion.Execute("InsProduccion", parametros);
 
-        produccion.idproduccion= parametros.Get<byte>("unidProduccion");
+        produccion.IdProduccion = parametros.Get<byte>("unidProduccion");
     }
 
     public IEnumerable<Produccion> TraerElementos()
