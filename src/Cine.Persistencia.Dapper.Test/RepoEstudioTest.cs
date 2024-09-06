@@ -12,8 +12,7 @@ public class RepoEstudioTest : TestBase
     public void TraerEstudiosOK ()
     {
         var repos = repo.TraerElementos();
-        Assert.Contains (repos, 
-                        est => est.Nombre == "Disney");
+        Assert.Contains (repos, est => est.Nombre == "Disney" && est.IdEstudio == 1);
     }
 }
 

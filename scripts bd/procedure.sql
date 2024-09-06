@@ -6,9 +6,9 @@ DELIMITER $$
 Drop Procedure if EXISTS InsEstudio $$
 Create Procedure InsEstudio (out xidEstudio tinyint unsigned, xnombre varchar (15), xfundacion date)
 begin
-insert into `Estudio` (nombre, fundacion)
-values (xnombre, xfundacion);
-SET xidEstudio = LAST_INSERT_ID();
+    insert into `Estudio` (nombre, fundacion)
+    values (xnombre, xfundacion);
+    SET xidEstudio = LAST_INSERT_ID();
 end $$
 
 call InsEstudio  (@idEstudioDisney, 'Disney', '1923-10-23') $$
@@ -69,8 +69,8 @@ create procedure InsProduccion (OUT     unidProduccion tinyint unsigned,
                                         unaMusica varchar (100),
                                         unPresupuesto decimal)
 begin
-    insert into Produccion(idEstudio, Director_General, Guion, Productor, Vestuario, Sonido, Presupuesto, Musica)
-    values (unidEstudio, unDirector_General, unGuion, unProductor, unVestuario, unSonido, unPresupuesto, unaMusica);
+    insert into Produccion(idEstudio, Director_General, Guion, Productor, Vestuario, Sonido, Musica, Presupuesto )
+    values (unidEstudio, unDirector_General, unGuion, unProductor, unVestuario, unSonido, unaMusica, unPresupuesto );
     SET unidProduccion = LAST_INSERT_ID();
 end $$
 

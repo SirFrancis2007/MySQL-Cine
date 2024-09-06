@@ -1,18 +1,15 @@
 namespace Cine.Core;
 public class Estudio
 {
-    public Estudio(byte idEstudio, string nombre, ushort fundacion, IEnumerable<Produccion> producciones, Produccion produccion)
+    public Estudio(byte idEstudio, string nombre, DateTime fundacion)
     {
         IdEstudio = idEstudio;
         Nombre = nombre;
-        Fundacion = fundacion;
-        Producciones = producciones;
-        Produccion = produccion;
+        Fundacion = fundacion;        
     }
 
     public byte IdEstudio { get ; set ; }
     public string Nombre { get ; set ; } = string.Empty;
-    public ushort Fundacion { get ; set ; }
-    public IEnumerable<Produccion> Producciones { get; set; }
-    public Produccion Produccion { get ; set ; }
+    public DateTime Fundacion { get ; set ; }
+    public IEnumerable<Produccion> Producciones { get; set; } = [];
 }

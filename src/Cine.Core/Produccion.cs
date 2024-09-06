@@ -2,7 +2,8 @@ namespace Cine.Core;
 
 public class Produccion
 {
-    public Produccion( byte idProduccion , byte idEstudio , string productor , string director , string guion , string vestuario , string sonido , string musica , float presupuesto)
+    public Produccion( byte idProduccion , byte idEstudio ,string director , string guion , string productor, string vestuario , string sonido , 
+    decimal presupuesto, string musica)
     {
         IdProduccion = idProduccion;
         IdEstudio = idEstudio ;
@@ -23,6 +24,6 @@ public class Produccion
     public string Vestuario { get ; set ; }
     public string Sonido { get ; set ; }
     public string Musica { get ; set ; }
-    public float Presupuesto { get ; set ; }
+    public decimal Presupuesto { get ; set ; } = 0;
 
 }

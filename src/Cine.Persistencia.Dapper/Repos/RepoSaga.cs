@@ -1,7 +1,3 @@
-
-
-using System.Reflection.Metadata.Ecma335;
-
 namespace Cine.Persistencia.Dapper.Repos;
 
 public class RepoSaga : RepoBase, IRepoSaga
@@ -15,12 +11,12 @@ public class RepoSaga : RepoBase, IRepoSaga
         var parametros = new DynamicParameters();
         parametros.Add ("unidsaga", ParameterDirection.Output);
         parametros.Add ("unNumero_Saga", saga.NSaga);
-        parametros.Add ("unidpelicula", saga.idPelicula);
+        parametros.Add ("unidpelicula", saga.IdPelicula);
         parametros.Add ("unnombre", saga.Nombre);
 
             Conexion.Execute("insSaga", parametros);
             
-            saga.idSaga = parametros.Get<byte>("unidsaga");
+            saga.IdSaga = parametros.Get<byte>("unidsaga");
     }
 
     public IEnumerable<Saga> TraerElementos()
