@@ -2,13 +2,13 @@ namespace Cine.Core;
 
 public class Produccion
 {
-    public Produccion( byte idProduccion , byte idEstudio ,string director , string guion , string productor, string vestuario , string sonido , 
+    public Produccion( byte idProduccion , byte idEstudio ,string Director_General , string guion , string productor, string vestuario , string sonido , 
     decimal presupuesto, string musica)
     {
         IdProduccion = idProduccion;
         IdEstudio = idEstudio ;
         Productor = productor ;
-        Director = director ;
+        Director = Director_General ;
         Guion = guion ;
         Vestuario = vestuario ;
         Sonido = sonido ;

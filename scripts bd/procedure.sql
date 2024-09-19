@@ -1,4 +1,4 @@
--- Active: 1700068523370@@127.0.0.1@3306@5to_Pelicula
+Use 5to_Pelicula;
 /*Store procedure*/
 
 -- Registar nuevo estudio
@@ -33,28 +33,6 @@ call InsGenero  (@idGFantasia, 'Fantasia') $$
 call InsGenero  (@idGFamiliar, 'Familiar') $$
 call InsGenero  (@idGAccion, 'Accion') $$
 call InsGenero  (@idGAventura, 'Aventura infantil') $$
-
--- Insert en Trailer:
-delimiter $$
-drop procedure if exists InsTrailer $$
-create procedure InsTrailer ( out unidTrailer tinyint unsigned,
-                                unidPelicula tinyint unsigned,
-                                unidGenero tinyint unsigned,
-                                unnombre varchar(50),
-                                unaduracion time)
-begin
- insert into Trailer( idPelicula, idGenero, nombre, duracion)
- values(unidPelicula, unidGenero, unnombre, unaduracion);
- SET unidTrailer = LAST_INSERT_ID();
-end $$
-
- CALL InsTrailer (@idTrFrozen1, @idGFamiliar, @idPeliFrozen, 'Frozen una aventura congelada', '00:01:30') $$
- CALL InsTrailer (@idTrFrozen1_2, @idGFamiliar, @idPeliFrozen, 'Frozen una aventura congelada', '00:02:25') $$
- CALL InsTrailer (@idTrFrozen2, @idGFamiliar, @idPeliFrozen2, 'Frozen 2', '00:02:01') $$
- CALL InsTrailer (@idTrInterestelar_1, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:01:39') $$ -- trailer 1
- CALL InsTrailer (@idTrInterestelar_2, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:20') $$ -- trailer 2
- CALL InsTrailer (@idTrInterestelar_3, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:26') $$-- trailer 3
- CALL InsTrailer (@idTrInterestelar_4, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:19') $$ -- tailer 4
 
 -- Insert en Produccion:
 Delimiter $$
@@ -126,18 +104,18 @@ DELIMITER $$
 
 Drop Procedure if EXISTS `InsPelicula` $$
 Create Procedure InsPelicula ( out unidPelicula mediumint unsigned,
-unidProduccion tinyint unsigned,
-unnombre varchar(40),
-unestreno date,
-unadescripcion varchar (300),
-unacalificacion tinyint unsigned,
-unaduracion Time,
-unarestrincion tinyint unsigned ,
-unrecaudado bigint unsigned)
+                                unidProduccion tinyint unsigned,
+                                unnombre varchar(40),
+                                unestreno date,
+                                unadescripcion varchar (300),
+                                unacalificacion tinyint unsigned,
+                                unaduracion Time,
+                                unarestrincion tinyint unsigned ,
+                                unrecaudado bigint unsigned)
 Begin
- insert into Pelicula (idProduccion, nombre, estreno, descripcion, calificacion, duracion, restrincion, recaudado)
-VALUES (unidProduccion, unnombre, unestreno, unadescripcion,
-unacalificacion, unaduracion, unarestrincion, unrecaudado) ;
+        insert into Pelicula (idProduccion, nombre, estreno, descripcion, calificacion, duracion, restrincion, recaudado)
+                VALUES (unidProduccion, unnombre, unestreno, unadescripcion,
+                unacalificacion, unaduracion, unarestrincion, unrecaudado) ;
  SET unidPelicula = LAST_INSERT_ID();
 END $$
 
@@ -146,6 +124,25 @@ call InsPelicula(@idPeliFrozen, @idProduFrozen, 'Frozen una aventura congelada',
  
  -- Películas comunes
  call InsPelicula(@idPeliInterestelar, @idProduInterestelar, 'Interestelar', '2014-11-06', 'Un equipo de exploradores viaja más allá de esta galaxia a través de un reciente descubierto agujero para descubrir si la humanidad tiene un futuro entre las estrellas', 9.0, '02:49:00', 13, 708000000) $$
+
+-- Insert en Trailer:
+delimiter $$
+drop procedure if exists InsTrailer $$
+create procedure InsTrailer ( out unidTrailer tinyint unsigned,
+                                unidPelicula tinyint unsigned,
+                                unidGenero tinyint unsigned,
+                                unnombre varchar(50),
+                                unaduracion time)
+begin
+    insert into Trailer( idPelicula, idGenero, nombre, duracion)
+    values(unidPelicula, unidGenero, unnombre, unaduracion);
+    SET unidTrailer = LAST_INSERT_ID();
+end $$
+
+    CALL InsTrailer (@idTrFrozen1,  @idPeliFrozen,@idGFamiliar, 'Frozen una aventura congelada', '00:01:30') $$
+    CALL InsTrailer (@idTrFrozen1_2,  @idPeliFrozen,@idGFamiliar, 'Frozen una aventura congelada', '00:02:25') $$
+    CALL InsTrailer (@idTrInterestelar_4,  @idPeliInterestelar, @idGFiccion,'Interestelar', '00:02:19') $$
+
 
 DELIMITER $$
 /*procedure de saga */

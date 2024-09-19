@@ -1,10 +1,10 @@
--- Active: 1700068523370@@127.0.0.1@3306@5to_Pelicula
+
 drop database if exists 5to_Pelicula;
 Create database 5to_Pelicula;
 Use 5to_Pelicula;
   create table Genero
  (
-  idGenero tinyint unsigned AUTO_INCREMENT primary key,
+  idGenero tinyint unsigned primary key AUTO_INCREMENT,
   genero varchar(30) not null
   );
  

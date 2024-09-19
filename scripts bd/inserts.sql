@@ -1,6 +1,6 @@
--- Active: 1691412339871@@127.0.0.1@3306@Pelicula
+-- Active: 1700068523370@@127.0.0.1@3306@5to_Pelicula
 
-Use Pelicula;
+Use 5to_Pelicula;
 
 START TRANSACTION ;
  SET time_zone ='-03:00';
@@ -79,11 +79,11 @@ START TRANSACTION ;
  insert into Trailer(idTrailer, idGenero, idPelicula, Nombre, Duracion)
  values
  (@idTrFrozen1, @idGFamiliar, @idPeliFrozen, 'Frozen una aventura congelada', '00:01:30'), -- trailer 1
- (@idTrFrozen1_2, @idGFamiliar, @idPeliFrozen, 'Frozen una aventura congelada', '00:02:25'), -- trailer 2
+ -- (@idTrFrozen1_2, @idGFamiliar, @idPeliFrozen, 'Frozen una aventura congelada', '00:02:25'), -- trailer 2
  (@idTrFrozen2, @idGFamiliar, @idPeliFrozen2, 'Frozen 2', '00:02:01'),
- (@idTrInterestelar_1, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:01:39'), -- trailer 1
- (@idTrInterestelar_2, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:20'), -- trailer 2
- (@idTrInterestelar_3, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:26'), -- trailer 3
+ -- (@idTrInterestelar_1, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:01:39'), -- trailer 1
+ -- (@idTrInterestelar_2, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:20'), -- trailer 2
+ -- (@idTrInterestelar_3, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:26'), -- trailer 3
  (@idTrInterestelar_4, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:19') -- tailer 4 Fijarse en ponerle la coma una vez verificado el Full test
 ;
  Test1

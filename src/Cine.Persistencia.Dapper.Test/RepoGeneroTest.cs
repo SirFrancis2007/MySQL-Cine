@@ -11,8 +11,7 @@ public class RepoGeneroTest : TestBase
     public void TraerGenerosOK()
     {
         var repos = repo.TraerElementos();
-        Assert.Contains(repos,
-            gen => gen.Nombre == "Ficcion" && gen.IdGenero == 1);
+        Assert.Contains(repos,gen => gen.Nombre == "Ficcion" && gen.IdGenero == 1);
     }
 }
 

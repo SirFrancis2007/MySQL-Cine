@@ -1,4 +1,4 @@
-use Pelicula;
+Use 5to_Pelicula;
 
 -- Cuanto dinero ganaron las peliculas (presupuesto - recaudación). Mostrar solo el nombre y dinero ganado de las películas que superen los 100,000,000. Ordenar de mayor a menor
 SELECT nombre, (recaudado - Presupuesto) AS ganancia 

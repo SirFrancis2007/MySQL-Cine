@@ -1,5 +1,6 @@
 /*Funtions*/
 
+Use 5to_Pelicula;
 
 /*Calcular el tiempo total de toda una saga*/
 

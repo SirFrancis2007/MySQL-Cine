@@ -11,6 +11,6 @@ public class RepoProduccionTest : TestBase
     public void TraerProduccionOK()
     {
         var repos = repo.TraerElementos();
-        Assert.Contains(repos, prod => prod.Director == "Christopher Nolan");
+        Assert.Contains(repos, prod => prod.IdProduccion == 1);
     }
 }
