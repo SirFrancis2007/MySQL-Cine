@@ -12,6 +12,6 @@ public class RepoSagaTest : TestBase
     public void TraerElementosOK ()
     {
         var repos = repo.TraerElementos();
-        Assert.Contains(repos, sag => sag.IdSaga == 1);
+        Assert.Contains(repos, sag => sag.IdPelicula == 1 && sag.IdSaga == 1);
     }
 }

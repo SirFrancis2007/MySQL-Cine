@@ -12,7 +12,7 @@ public class RepoSaga : RepoBase, IRepoSaga
         parametros.Add ("unidsaga", ParameterDirection.Output);
         parametros.Add ("unNumero_Saga", saga.NSaga);
         parametros.Add ("unidpelicula", saga.IdPelicula);
-        parametros.Add ("unnombre", saga.Nombre);
+        parametros.Add ("unnombre", saga.NombreSaga);
 
             Conexion.Execute("insSaga", parametros);
             
