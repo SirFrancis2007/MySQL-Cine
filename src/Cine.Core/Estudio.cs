@@ -12,4 +12,5 @@ public class Estudio
     public string Nombre { get ; set ; } = string.Empty;
     public DateTime Fundacion { get ; set ; }
     public IEnumerable<Produccion> Producciones { get; set; } = [];
+    
 }

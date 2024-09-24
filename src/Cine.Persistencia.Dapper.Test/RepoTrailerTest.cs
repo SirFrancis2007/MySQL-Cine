@@ -15,4 +15,6 @@ public class RepoTrailerTest : TestBase
         var repos = repo.TraerElementos();
         Assert.Contains(repos, trai => trai.IdPelicula == 1);
     }
+
+    
 }

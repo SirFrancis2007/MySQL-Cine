@@ -19,4 +19,6 @@ public class RepoActorTest : TestBase
         var repos = repo.TraerElementos();
         Assert.Contains (repos, act => act.Apellido == "Bell" && act.idActor == 1);
     }
+
+    
 }

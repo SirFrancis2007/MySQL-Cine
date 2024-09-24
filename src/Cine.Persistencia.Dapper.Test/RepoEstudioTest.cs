@@ -1,3 +1,4 @@
+using Cine.Core;
 using Cine.Core.Persistencia;
 using Cine.Persistencia.Dapper.Repos;
 
@@ -13,6 +14,11 @@ public class RepoEstudioTest : TestBase
     {
         var repos = repo.TraerElementos();
         Assert.Contains (repos, est => est.Nombre == "Disney" && est.IdEstudio == 1);
+    }
+
+    [Fact]
+    public void AltaEstudio () {
+        
     }
 }
 
