@@ -1,3 +1,4 @@
+using Cine.Core;
 using Cine.Core.Persistencia;
 using Cine.Persistencia.Dapper.Repos;
 
@@ -12,6 +13,19 @@ public class RepoGeneroTest : TestBase
     {
         var repos = repo.TraerElementos();
         Assert.Contains(repos,gen => gen.Nombre == "Ficcion" && gen.IdGenero == 1);
+    }
+
+    public void AltageneroOK () {
+        Byte Idgenero = 5;
+        string nombre = "Terror";
+
+        var altageneroterror = new Genero () 
+        {
+            IdGenero = Idgenero,
+            Nombre = nombre
+        };
+
+        repo.Alta(altageneroterror);
     }
 }
 
