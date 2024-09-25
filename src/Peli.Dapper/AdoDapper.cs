@@ -48,7 +48,7 @@ namespace Peli.Dapper
                         _queryAltaEstudio,
                         new
                         {
-                            idactor = actor.idActor;
+                            idactor = Actor.idActor;
                             nombre = actor.Nombre;
                             apellido = actor.Apellido;
                             fecha_nacimiento = actor.fecha_nacimiento;

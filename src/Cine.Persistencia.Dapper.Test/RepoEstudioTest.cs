@@ -22,14 +22,14 @@ public class RepoEstudioTest : TestBase
         string nombre = "Pixar";
         DateTime fundacion = new DateTime(1986,02,13);
 
-        /*var altaestudiopixar = new Estudio ()
+        var altaestudiopixar = new Estudio ()
         {
             IdEstudio = idestudio,
             Nombre = nombre,
             Fundacion = fundacion
         };
 
-        repo.Alta(altaestudiopixar);*/
+        repo.Alta(altaestudiopixar);
     }
 }
 
