@@ -8,7 +8,7 @@ public class RepoActor:RepoBase, IRepoActor
     public void Alta(Actor elemento)
     {
         var parametros = new DynamicParameters();
-        parametros.Add("xActor", ParameterDirection.Output);
+        parametros.Add("xActor", direction: ParameterDirection.Output);
         parametros.Add("xNombre", elemento.Nombre);
         parametros.Add("xfecha_nacimiento", elemento.FNacimiento);
         parametros.Add("xsexo", elemento.sexo);

@@ -11,7 +11,7 @@ public class RepoTrailer : RepoBase, IRepoTrailer
     public void Alta(Trailer trailer)
     {
         var parametros = new DynamicParameters();
-        parametros.Add("unidTrailer", ParameterDirection.Output);
+        parametros.Add("unidTrailer", direction: ParameterDirection.Output);
         parametros.Add("unidPelicula", trailer.IdPelicula);
         parametros.Add("unidGenero", trailer.IdGenero);
         parametros.Add("unnombre", trailer.Nombre);

@@ -8,7 +8,7 @@ public class RepoGenero : RepoBase, IRepoGenero
     {
         //Vamos a declara la lista de params
         var parametros = new DynamicParameters();
-        parametros.Add("unidGenero", ParameterDirection.Output);
+        parametros.Add("unidGenero", direction: ParameterDirection.Output);
         parametros.Add("ungenero", genero.Nombre);
 
         Conexion.Execute("InsGenero", parametros);

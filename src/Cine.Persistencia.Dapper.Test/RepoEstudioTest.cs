@@ -22,7 +22,7 @@ public class RepoEstudioTest : TestBase
         string nombre = "Pixar";
         DateTime fundacion = new DateTime(1986,02,13);
 
-        var altaestudiopixar = new Estudio ()
+        var altaestudiopixar = new Estudio (idestudio, nombre, fundacion)
         {
             IdEstudio = idestudio,
             Nombre = nombre,

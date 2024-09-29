@@ -11,7 +11,7 @@ public class RepoProduccion : RepoBase, IRepoProduccion
     public void Alta(Produccion produccion)
     {
         var parametros = new DynamicParameters();
-        parametros.Add("unidProduccion", ParameterDirection.Output);
+        parametros.Add("unidProduccion", direction: ParameterDirection.Output);
         parametros.Add("unidEstudio", produccion.IdEstudio);
         parametros.Add("unDirector_General", produccion.Director);
         parametros.Add("unGuion", produccion.Guion);

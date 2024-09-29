@@ -12,7 +12,7 @@ public class RepoPelicula : RepoBase, IRepoPelicula
     public void Alta(Pelicula pelicula)
     {
         var parametros = new DynamicParameters();
-        parametros.Add ("unidPelicula", ParameterDirection.Output);
+        parametros.Add ("unidPelicula", direction: ParameterDirection.Output);
         parametros.Add ("unidProduccion", pelicula.IdProduccion);
         parametros.Add ("unnombre", pelicula.Nombre);
         parametros.Add ("unestreno", pelicula.Estreno);

@@ -9,7 +9,7 @@ public class RepoSaga : RepoBase, IRepoSaga
     public void Alta(Saga saga)
     {
         var parametros = new DynamicParameters();
-        parametros.Add ("unidsaga", ParameterDirection.Output);
+        parametros.Add ("unidsaga", direction: ParameterDirection.Output);
         parametros.Add ("unNumero_Saga", saga.NSaga);
         parametros.Add ("unidpelicula", saga.IdPelicula);
         parametros.Add ("unnombre", saga.NombreSaga);

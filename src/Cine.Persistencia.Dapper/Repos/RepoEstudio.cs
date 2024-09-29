@@ -10,7 +10,7 @@ public class RepoEstudio:RepoBase, IRepoEstudio
     public void Alta(Estudio estudio)
     {
         var parametros = new DynamicParameters();
-        parametros.Add("xidEstudio", ParameterDirection.Output);
+        parametros.Add("xidEstudio", direction: ParameterDirection.Output);
         parametros.Add("xnombre", estudio.Nombre);
         parametros.Add("xfundacion", estudio.Fundacion);
 
@@ -24,20 +24,6 @@ public class RepoEstudio:RepoBase, IRepoEstudio
         var query = @"SELECT * FROM Estudio";
         var estudios = Conexion.Query<Estudio>(query);
         return estudios;    
-    }
-
-    public Estudio? ObtenerEstudio(byte IdEstudio)
-    {
-          using (var multi = Conexion.QueryMultiple(sql: queryEstudio, new { id = IdEstudio}))
-          {
-            var estudio = multi.ReadSingleOrDefault<Estudio>();
-            if (estudio is not null)
-            {
-                //estudio.Producciones = multi.Read<Producciones>().ToList();
-            }
-
-            return estudio;
-          }
     }
 
     public Estudio? Detalle(byte indiceSimple)

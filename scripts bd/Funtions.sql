@@ -26,7 +26,7 @@ END $$
 DELIMITER $$
 Drop FUNCTION if EXISTS CalPresuEstudio $$
 Create FUNCTION CalPresuEstudio (xidEstudio TINYINT UNSIGNED)
-                               returns time READS SQL Data
+                               returns decimal READS SQL Data
 BEGIN
        SELECT Sum(`Pelicula`.recaudado) into @totalrecaudado
        FROM `Pelicula`
@@ -35,3 +35,7 @@ BEGIN
        where idEstudio = xidEstudio;
        RETURN @totalrecaudado;
 END $$
+
+/*Ejemplo de invocacion*/
+
+SELECT CalPresuEstudio(1) AS TotalRecaudado;
