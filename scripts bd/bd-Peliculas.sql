@@ -1,95 +1,85 @@
+DROP DATABASE IF EXISTS 5to_Pelicula;
+CREATE DATABASE 5to_Pelicula;
+USE 5to_Pelicula;
 
-drop database if exists 5to_Pelicula;
-Create database 5to_Pelicula;
-Use 5to_Pelicula;
-  create table Genero
- (
-  idGenero tinyint unsigned primary key AUTO_INCREMENT,
-  genero varchar(30) not null
-  );
- 
-  create table Estudio
-  (
-   idEstudio tinyint unsigned AUTO_INCREMENT primary key,
-   nombre varchar (15) not null,
-   fundacion date not null,
-    CONSTRAINT UQ_Estudio UNIQUE (nombre)
-  );
- 
-     create table Produccion
-  (
-   idProduccion tinyint unsigned primary key AUTO_INCREMENT,
-   idEstudio tinyint unsigned,
-   Director_General varchar (50) not null,
-   Guion  varchar (100),
-   Productor varchar(100),
-   Vestuario varchar (100),
-   Sonido varchar (100),
-   Presupuesto decimal not null,
-   Musica varchar (100),
+CREATE TABLE Genero (
+  idGenero TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  genero VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE Estudio (
+  idEstudio TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(15) NOT NULL,
+  fundacion DATE NOT NULL,
+  CONSTRAINT UQ_Estudio UNIQUE (nombre)
+);
+
+CREATE TABLE Produccion (
+  idProduccion TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  idEstudio TINYINT UNSIGNED,
+  Director_General VARCHAR(50) NOT NULL,
+  Guion VARCHAR(100),
+  Productor VARCHAR(100),
+  Vestuario VARCHAR(100),
+  Sonido VARCHAR(100),
+  Presupuesto DECIMAL(15, 2) NOT NULL,
+  Musica VARCHAR(100),
   CONSTRAINT FK_Produccion_Estudio FOREIGN KEY (idEstudio)
-   REFERENCES Estudio (idEstudio)
-);
- 
-  create table Pelicula
-  (
-  idPelicula mediumint unsigned AUTO_INCREMENT primary key,
-  idProduccion tinyint unsigned,
-  nombre varchar(40) not null,
-  estreno date not null,
-  descripcion varchar (300),
-  calificacion tinyint unsigned,
-  duracion Time not null,
-  restrincion tinyint unsigned ,
-  recaudado bigint unsigned,
-   CONSTRAINT FK_Pelicula_Produccion FOREIGN KEY (idProduccion)
-       REFERENCES  Produccion (idProduccion)
-  );
- 
-  Create table Actor
-(
- idActor tinyint unsigned primary key AUTO_INCREMENT,
- Nombre varchar(40) not null,
- Apellido varchar(40) not null,
- fecha_nacimiento date not null,
- sexo char(1) not null,
- nacionalidad varchar(40) not null,
- rol varchar (40) not null
- );
- 
-create table Actor_Pelicula
-(
-idActor tinyint unsigned,
-idPelicula mediumint unsigned,
-personaje VARCHAR(50) not null,
-CONSTRAINT PK_Actor_Pelicula PRIMARY KEY (idActor ,idPelicula, personaje),
-CONSTRAINT FK_Actor_actor FOREIGN KEY (idActor)
-   REFERENCES Actor (idActor) ,
-CONSTRAINT FK_Pelicula_Pelicula FOREIGN KEY (idPelicula)
-   REFERENCES Pelicula (idPelicula)
+    REFERENCES Estudio (idEstudio)
 );
 
-
-create table Saga
-(
-idSaga tinyint unsigned AUTO_INCREMENT primary key,
-Numero_Saga tinyint unsigned,
-idPelicula mediumint unsigned,
-Nombre varchar (50) not null,
-CONSTRAINT FK_Saga FOREIGN KEY (idPelicula)
-REFERENCES  Pelicula (idPelicula)
+CREATE TABLE Pelicula (
+  idPelicula TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  idProduccion TINYINT UNSIGNED,
+  nombre VARCHAR(40) NOT NULL,
+  estreno DATE NOT NULL,
+  descripcion VARCHAR(300),
+  calificacion TINYINT UNSIGNED,
+  duracion TIME NOT NULL,
+  restrincion TINYINT UNSIGNED,
+  recaudado BIGINT UNSIGNED,
+  CONSTRAINT FK_Pelicula_Produccion FOREIGN KEY (idProduccion)
+    REFERENCES Produccion (idProduccion)
 );
 
+CREATE TABLE Actor (
+  idActor TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  Nombre VARCHAR(40) NOT NULL,
+  Apellido VARCHAR(40) NOT NULL,
+  fecha_nacimiento DATE NOT NULL,
+  sexo CHAR(1) NOT NULL CHECK (sexo IN ('M', 'F')),
+  nacionalidad VARCHAR(40) NOT NULL,
+  rol VARCHAR(40) NOT NULL
+);
+
+CREATE TABLE Actor_Pelicula (
+  idActor TINYINT UNSIGNED,
+  idPelicula TINYINT UNSIGNED,
+  personaje VARCHAR(50) NOT NULL,
+  CONSTRAINT PK_Actor_Pelicula PRIMARY KEY (idActor, idPelicula, personaje),
+  CONSTRAINT FK_Actor_Pelicula_Actor FOREIGN KEY (idActor)
+    REFERENCES Actor (idActor),
+  CONSTRAINT FK_Actor_Pelicula_Pelicula FOREIGN KEY (idPelicula)
+    REFERENCES Pelicula (idPelicula)
+);
+
+CREATE TABLE Saga (
+  idSaga TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  Numero_Saga TINYINT UNSIGNED,
+  idPelicula TINYINT UNSIGNED,
+  Nombre VARCHAR(50) NOT NULL,
+  CONSTRAINT FK_Saga_Pelicula FOREIGN KEY (idPelicula)
+    REFERENCES Pelicula (idPelicula)
+);
 
 CREATE TABLE Trailer (
-   idTrailer tinyint unsigned AUTO_INCREMENT primary key,
-   idPelicula mediumint unsigned,
-   idGenero tinyint unsigned,
-   nombre varchar(50) not null,
-   duracion time not null,
-   CONSTRAINT FK_Trailer_Genero FOREIGN KEY (idGenero)
-       REFERENCES Genero (idGenero),
-   CONSTRAINT FK_Trailer_Pelicula FOREIGN KEY (idPelicula)
-       REFERENCES Pelicula (idPelicula)
+  idTrailer TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  idPelicula TINYINT UNSIGNED,
+  idGenero TINYINT UNSIGNED,
+  nombre VARCHAR(50) NOT NULL,
+  duracion TIME NOT NULL,
+  CONSTRAINT FK_Trailer_Genero FOREIGN KEY (idGenero)
+    REFERENCES Genero (idGenero),
+  CONSTRAINT FK_Trailer_Pelicula FOREIGN KEY (idPelicula)
+    REFERENCES Pelicula (idPelicula)
 );
-

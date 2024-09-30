@@ -14,7 +14,8 @@ public class RepoProduccionTest : TestBase
         var repos = repo.TraerElementos();
         Assert.Contains(repos, prod => prod.IdProduccion == 1);
     }
-
+    
+    [Fact]
     public void AltaProduccionOK () {
         byte idproduccion = 5;
         byte idestudio = 1;
@@ -35,7 +36,7 @@ public class RepoProduccionTest : TestBase
             Guion = guion,
             Vestuario = vestuario,
             Sonido = sonido,
-            Musica = musica,
+            Musica = musica
         };        
     }
 }

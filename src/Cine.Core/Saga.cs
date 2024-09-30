@@ -2,22 +2,19 @@ namespace Cine.Core;
 
 public class Saga
 {
-    public Saga( Byte idSaga , Byte Numero_Saga , 
-                UInt32 idPelicula ,  String Nombre , 
-                IEnumerable<Pelicula> peliculas , Pelicula pelicula  )
+    public Saga(byte idSaga , byte Numero_Saga ,
+                byte idPelicula , string Nombre)
     {
         IdSaga = idSaga ;
         NSaga = Numero_Saga ;
         IdPelicula = idPelicula ;
         NombreSaga = Nombre ;
-        Peliculas = peliculas ;
-        Pelicula = pelicula ;
+        Peliculas = [] ;
     }   
 
-     public Byte IdSaga { get ; set ; }
-    public UInt32 IdPelicula { get ; set ; }
-    public Byte NSaga { get ; set ; }
-    public String NombreSaga { get ; set ; } 
+    public byte IdSaga { get ; set ; }
+    public byte IdPelicula { get ; set ; }
+    public byte NSaga { get ; set ; }
+    public string NombreSaga { get ; set ; } 
     public IEnumerable<Pelicula> Peliculas { get ; set ; }
-    public Pelicula Pelicula { get ; set ; }
 }

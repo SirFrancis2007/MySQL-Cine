@@ -30,7 +30,27 @@ public class RepoPelicula : RepoBase, IRepoPelicula
     public IEnumerable<Pelicula> TraerElementos()
     {
         var query = @"SELECT * FROM Pelicula";
-        var pelicula = Conexion.Query<Pelicula>(query);
+        var pelicula = Conexion.Query<Pelicula>(queryProduccion);
+        return pelicula;
+    }
+
+    private static readonly string queryProduccion
+     = @"Select idPelicula, idProduccion, Pelicula.nombre 
+        From Pelicula
+        join Produccion using (idProduccion)
+        ";
+    
+    public List<Pelicula> TraerPeliProdu()
+    {
+         var pelicula = Conexion.Query<Pelicula, Produccion, Pelicula>
+            (queryProduccion,
+            (pelicula, produccion) =>
+            {
+                pelicula.Produccion = produccion;
+                return pelicula;
+            },
+            splitOn: "idProduccion")
+            .ToList();
         return pelicula;
     }
 }

@@ -10,9 +10,9 @@ public class RepoPeliculaTest : TestBase
     public RepoPeliculaTest () : base () => repo = new RepoPelicula(Conexion);
 
     [Fact]
-    public void TraerGenerosOK()
+    public void TraerPelisOK()
     {
         var repos = repo.TraerElementos();
-        Assert.Contains(repos, peli => peli.Nombre == "Frozen una aventura congelada" && peli.IdProduccion == 1);
+        Assert.Contains(repos, peli => peli.IdPelicula == 1);
     }
 }

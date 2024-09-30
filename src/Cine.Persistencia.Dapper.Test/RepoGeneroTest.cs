@@ -15,6 +15,8 @@ public class RepoGeneroTest : TestBase
         Assert.Contains(repos,gen => gen.Nombre == "Ficcion" && gen.IdGenero == 1);
     }
 
+    [Fact]
+    
     public void AltageneroOK () {
         Byte Idgenero = 5;
         string nombre = "Terror";

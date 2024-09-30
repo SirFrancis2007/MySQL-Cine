@@ -21,11 +21,12 @@ public class RepoActorTest : TestBase
         Assert.Contains (repos, act => act.Apellido == "Bell" && act.idActor == 1);
     }
 
+    [Fact]
     public void AltaactorOK () {
-        byte        idactor = 90;
+        byte        idactor = 26;
         string      nombre = "Antonio";
         string      apellido = "Bandera";
-        DateOnly    Fnacimiento = new DateOnly (1960, 08,10);
+        DateTime    Fnacimiento = new DateTime (1960, 08,10);
         char        Sexo = 'M';
         string      nacionalidad = "España";
         string      rol = "Gato con botas";

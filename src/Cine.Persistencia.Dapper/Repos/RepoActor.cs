@@ -1,4 +1,6 @@
 
+using System.Reflection.Metadata.Ecma335;
+
 namespace Cine.Persistencia.Dapper.Repos;
 
 public class RepoActor:RepoBase, IRepoActor
@@ -8,12 +10,15 @@ public class RepoActor:RepoBase, IRepoActor
     public void Alta(Actor elemento)
     {
         var parametros = new DynamicParameters();
-        parametros.Add("xActor", direction: ParameterDirection.Output);
+        parametros.Add("xidActor", direction: ParameterDirection.Output);
         parametros.Add("xNombre", elemento.Nombre);
+        parametros.Add("xApellido", elemento.Apellido);
         parametros.Add("xfecha_nacimiento", elemento.FNacimiento);
         parametros.Add("xsexo", elemento.sexo);
         parametros.Add("xnacionalidad", elemento.Nacionalidad);
         parametros.Add("xrol", elemento.Rol);        
+
+            Conexion.Execute("InsActor", parametros);
 
         elemento.idActor = parametros.Get<byte>("xidActor");
     }
