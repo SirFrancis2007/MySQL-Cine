@@ -47,7 +47,7 @@ CREATE TABLE Actor (
   Nombre VARCHAR(40) NOT NULL,
   Apellido VARCHAR(40) NOT NULL,
   fecha_nacimiento DATE NOT NULL,
-  sexo CHAR(1) NOT NULL CHECK (sexo IN ('M', 'F')),
+  sexo CHAR(1) NOT NULL,
   nacionalidad VARCHAR(40) NOT NULL,
   rol VARCHAR(40) NOT NULL
 );

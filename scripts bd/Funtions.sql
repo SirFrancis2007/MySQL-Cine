@@ -8,7 +8,7 @@ Use 5to_Pelicula;
 DELIMITER $$
 Drop FUNCTION if EXISTS CalTiempoSaga $$
 Create FUNCTION CalTiempoSaga (xidSaga TINYINT UNSIGNED)
-                               returns Time READS SQL Data
+                            returns Time READS SQL Data
 BEGIN
        Declare TiempoTotal Time;
 
