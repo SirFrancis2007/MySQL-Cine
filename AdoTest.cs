@@ -41,7 +41,7 @@ public void ConsultaActoresOK()
 }
 
 /*------------------------------------------------------------------------------*/
-
+/*Este */
     [Fact]
     public void BorrarEstudioOK()
     {
@@ -67,19 +67,18 @@ public void ActualizarPresupuesto(byte idPelicula, decimal nuevoPresupuesto)
     parametros.Add("unidPelicula", idPelicula);
     parametros.Add("unrecaudado", nuevoPresupuesto);
 
-    Conexion.Execute("UpdPresupuestoPelicula", parametros);
+    Conexion.Execute("procedure", parametros);
 }
 
 
+[Fact]
+public void ActualizarPresupuestoOK()
+{
+    byte idPelicula = 1; 
+    decimal nuevoPresupuesto = 100000000; 
+    repo.ActualizarPresupuesto(idPelicula, nuevoPresupuesto);
 
-    [Fact]
-    public void ActualizarPresupuestoOK()
-    {
-        byte idPelicula = 1; 
-        decimal nuevoPresupuesto = 100000000; 
-        repo.ActualizarPresupuesto(idPelicula, nuevoPresupuesto);
+    var repos = repo.TraerElementos();
+    Assert.Contains(repos, peli => peli.IdPelicula == idPelicula && peli.Recaudado == nuevoPresupuesto);
 
-        var repos = repo.TraerElementos();
-        Assert.Contains(repos, peli => peli.IdPelicula == idPelicula && peli.Recaudado == nuevoPresupuesto);
-
-    }
+}

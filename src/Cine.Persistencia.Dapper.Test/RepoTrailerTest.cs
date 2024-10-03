@@ -8,6 +8,7 @@ public class RepoTrailerTest : TestBase
     readonly IRepoTrailer repo;
 
     public RepoTrailerTest () : base () => repo = new RepoTrailer (Conexion);
+    
     [Fact]
 
     public void TraerElementosOK ()

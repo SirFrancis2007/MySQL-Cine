@@ -30,6 +30,22 @@ public class RepoEstudio:RepoBase, IRepoEstudio
     {
         throw new NotImplementedException();
     }
+
+    public void Borrar(byte idEstudio)
+    {
+        var query = "DELETE FROM Estudio WHERE IdEstudio = @IdEstudio";
+        /*try ejecuta la query*/
+        try
+        {
+            Conexion.Execute(query, new { IdEstudio = idEstudio });
+        }
+        /*Se consulta si la excepcion contiene el mensaje del trigger y se lo alamacena en la ConstraintException ese mensaje.*/
+        catch (Exception e)
+        {
+            if(e.Message.Contains("No se puede eliminar el estudio"))
+                throw new ConstraintException(e.Message, e);
+        }
+    }
 }
 
 

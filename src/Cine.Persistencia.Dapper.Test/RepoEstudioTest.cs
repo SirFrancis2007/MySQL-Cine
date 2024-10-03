@@ -1,3 +1,4 @@
+using System.Data;
 using Cine.Core;
 using Cine.Core.Persistencia;
 using Cine.Persistencia.Dapper.Repos;
@@ -10,19 +11,20 @@ public class RepoEstudioTest : TestBase
     public RepoEstudioTest() : base() => repo = new RepoEstudio(Conexion);
     [Fact]
 
-    public void TraerEstudiosOK ()
+    public void TraerEstudiosOK()
     {
         var repos = repo.TraerElementos();
-        Assert.Contains (repos, est => est.Nombre == "Disney" && est.IdEstudio == 1);
+        Assert.Contains(repos, est => est.Nombre == "Disney" && est.IdEstudio == 1);
     }
 
     [Fact]
-    public void AltaEstudioOK () {
+    public void AltaEstudioOK()
+    {
         Byte idestudio = 3;
         string nombre = "Pixar";
-        DateTime fundacion = new DateTime(1986,02,13);
+        DateTime fundacion = new DateTime(1986, 02, 13);
 
-        var altaestudiopixar = new Estudio (idestudio, nombre, fundacion)
+        var altaestudiopixar = new Estudio(idestudio, nombre, fundacion)
         {
             IdEstudio = idestudio,
             Nombre = nombre,
@@ -30,6 +32,18 @@ public class RepoEstudioTest : TestBase
         };
 
         repo.Alta(altaestudiopixar);
+    }
+
+    [Fact]
+    public void BorrarEstudioExcep()
+    {
+        byte idestudio = 3;
+
+        /*Al saberse que va a dar error, se almacena dentro de la var excep, que esto va a dar error, 
+        <ConstraintException> alamacena la restriccion del try/catch, y se le pasa el metodo que se va a ejecutar
+        Por ultimo se asegura que la excepcion contenga el mensaje :)*/
+        var excep = Assert.Throws<ConstraintException>(() => repo.Borrar(idestudio));
+        Assert.Contains("No se puede eliminar", excep.Message);
     }
 }
 
