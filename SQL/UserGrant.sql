@@ -3,6 +3,11 @@ USE 5to_Pelicula;
 -- create user [if not exists]'nomrbreuser'@'terminal' identified by 'password';
 -- Drop user [if exists]...;
 
+-- Drop de usuarios
+DROP USER IF EXISTS 'UserDirector'@'localhost';
+DROP USER IF EXISTS 'UserCliente'@'%';
+
+-- Creacion de usuarios
 CREATE USER if NOT EXISTS 'UserDirector'@'localhost' IDENTIFIED BY 'director123';
 CREATE USER if NOT EXISTS 'UserCliente'@'%' IDENTIFIED BY 'cliente456';
 
