@@ -1,3 +1,4 @@
+-- Active: 1700068523370@@127.0.0.1@3306@5to_Pelicula
 USE 5to_Pelicula;
 
 -- create user [if not exists]'nomrbreuser'@'terminal' identified by 'password';
@@ -8,8 +9,8 @@ DROP USER IF EXISTS 'UserDirector'@'localhost';
 DROP USER IF EXISTS 'UserCliente'@'%';
 
 -- Creacion de usuarios
-CREATE USER if NOT EXISTS 'UserDirector'@'localhost' IDENTIFIED BY 'director123';
-CREATE USER if NOT EXISTS 'UserCliente'@'%' IDENTIFIED BY 'cliente456';
+CREATE USER if NOT EXISTS 'UserDirector'@'localhost' IDENTIFIED BY 'Director123!';
+CREATE USER if NOT EXISTS 'UserCliente'@'%' IDENTIFIED BY 'Cliente456!';
 
 /*Permisos de clintes*/
 -- Cliente tiene acceso a 
