@@ -18,6 +18,7 @@ public class Pelicula
         restriccion = Restriccion;
         recaudado = Recaudado;
     }
+    
     public byte IdPelicula { get ; set ; }
     public byte IdProduccion { get ; set ; }
     public string Nombre { get ; set ; }
@@ -30,4 +31,9 @@ public class Pelicula
     public IEnumerable<Trailer> Trailers { get ; set ; }
     public IEnumerable<Actor> Actores { get; set; }
     public Produccion ?Produccion { get ; set ; }
+}
+
+public class Actor
+{
+    
 }

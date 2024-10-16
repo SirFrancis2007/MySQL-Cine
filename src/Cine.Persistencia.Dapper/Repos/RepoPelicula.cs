@@ -52,4 +52,21 @@ public class RepoPelicula : RepoBase, IRepoPelicula
            .ToList();
         return pelicula;
     }
+
+    private static readonly string queryActorPelicula
+     = @"SELECT  *
+        FROM    Pelicula
+        WHERE   idPelicula = @idpelicula;
+
+        SELECT  Actor.Nombre,Actor.Apellido
+        FROM    Pelicula
+        JOIN    Actor USING (idpelicula)
+        WHERE   idPelicual = @idPelicula;
+        ";
+
+    public IEnumerable<Actor> ActoresPelicula()
+    {
+        var ActoresPelicula = Conexion.Query<Actor>(queryActorPelicula);
+        return ActoresPelicula;    
+    }
 }

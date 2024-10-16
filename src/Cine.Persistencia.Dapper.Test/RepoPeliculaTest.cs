@@ -1,6 +1,7 @@
 using Cine.Core;
 using Cine.Core.Persistencia;
 using Cine.Persistencia.Dapper.Repos;
+using Xunit.Sdk;
 
 namespace Cine.Persistencia.Dapper.Test;
 
@@ -16,6 +17,13 @@ public class RepoPeliculaTest : TestBase
         var repos = repo.TraerElementos();
         Assert.Contains(repos, peli => peli.IdPelicula == 1);
     }
+
+    /*[Fact]
+    public void TraerActoresDePelisOK()
+    {
+        var repos = repo.ActoresPelicula();
+        Assert.Contains (repos,  =>  );
+    }*/
 
     public void AltaPeliculaST7 ()
     {

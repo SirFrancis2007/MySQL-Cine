@@ -1,5 +1,5 @@
 namespace Cine.Core;
-public class Actor
+public class peliculaActor
 {
     public byte idActor { get ; set ; }
     public string Nombre { get ; set ; }
