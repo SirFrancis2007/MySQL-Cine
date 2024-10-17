@@ -14,7 +14,7 @@ public class RepoActor:RepoBase, IRepoActor
         parametros.Add("xNombre", elemento.Nombre);
         parametros.Add("xApellido", elemento.Apellido);
         parametros.Add("xfecha_nacimiento", elemento.FNacimiento);
-        parametros.Add("xsexo", elemento.sexo);
+        parametros.Add("xsexo", elemento.Sexo);
         parametros.Add("xnacionalidad", elemento.Nacionalidad);
         parametros.Add("xrol", elemento.Rol);        
 

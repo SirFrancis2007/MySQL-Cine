@@ -103,7 +103,7 @@ CALL InsActor (@idActorSantino, 'Santino ', 'Fontana', '1982-03-21', 'M', 'Estad
 DELIMITER $$
 
 Drop Procedure if EXISTS `InsPelicula` $$
-Create Procedure InsPelicula ( out unidPelicula mediumint unsigned,
+Create Procedure InsPelicula ( out unidPelicula TINYINT UNSIGNED,
                                 unidProduccion tinyint unsigned,
                                 unnombre varchar(40),
                                 unestreno date,

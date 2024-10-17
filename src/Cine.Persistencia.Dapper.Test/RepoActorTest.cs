@@ -24,7 +24,6 @@ public class RepoActorTest : TestBase
     [Fact]
     public void AltaactorOK()
     {
-        byte idactor = 26;
         string nombre = "Antonio";
         string apellido = "Bandera";
         DateTime Fnacimiento = new DateTime(1960, 08, 10);
@@ -32,13 +31,12 @@ public class RepoActorTest : TestBase
         string nacionalidad = "España";
         string rol = "Gato con botas";
 
-        var altaactorBandera = new Actor()
+        var altaactorBandera = new Actor(0,nombre , apellido, Fnacimiento, Sexo, nacionalidad, rol)
         {
-            idActor = idactor,
             Nombre = nombre,
             Apellido = apellido,
             FNacimiento = Fnacimiento,
-            sexo = Sexo,
+            Sexo = Sexo,
             Nacionalidad = nacionalidad,
             Rol = rol
         };
@@ -52,7 +50,6 @@ public class RepoActorTest : TestBase
     [Fact]
     public void AltaActorRey()
     {
-        byte idactor = 27;
         string nombre = "Daisy";
         string apellido = "Ridley";
         DateTime Fnacimiento = new DateTime(1992, 04, 10);
@@ -60,13 +57,12 @@ public class RepoActorTest : TestBase
         string nacionalidad = "Inglesa";
         string rol = "Rey";
 
-        var altaactorRey = new Actor()
+        var altaactorRey = new Actor(0,nombre , apellido, Fnacimiento, Sexo, nacionalidad, rol)
         {
-            idActor = idactor,
             Nombre = nombre,
             Apellido = apellido,
             FNacimiento = Fnacimiento,
-            sexo = Sexo,
+            Sexo = Sexo,
             Nacionalidad = nacionalidad,
             Rol = rol
         };
@@ -80,7 +76,6 @@ public class RepoActorTest : TestBase
     [Fact]
     public void AltaActorMark()
     {
-        byte idactor = 28;
         string nombre = "Mark";
         string apellido = "Hamill";
         DateTime Fnacimiento = new DateTime(1951, 09, 25);
@@ -88,13 +83,12 @@ public class RepoActorTest : TestBase
         string nacionalidad = "Estadounidense";
         string rol = "Luke Skaywalker";
 
-        var altaactorLuke = new Actor()
+        var altaactorLuke = new Actor(0,nombre , apellido, Fnacimiento, Sexo, nacionalidad, rol)
         {
-            idActor = idactor,
             Nombre = nombre,
             Apellido = apellido,
             FNacimiento = Fnacimiento,
-            sexo = Sexo,
+            Sexo = Sexo,
             Nacionalidad = nacionalidad,
             Rol = rol
         };
@@ -108,7 +102,6 @@ public class RepoActorTest : TestBase
     [Fact]
     public void AltaActorKylo()
     {
-        byte idactor = 29;
         string nombre = "Adam";
         string apellido = "Driver";
         DateTime Fnacimiento = new DateTime(1983, 11, 19);
@@ -116,13 +109,12 @@ public class RepoActorTest : TestBase
         string nacionalidad = "Estadounidense";
         string rol = "Kylo Ren";
 
-        var altaactorKylo = new Actor()
+        var altaactorKylo = new Actor(0,nombre , apellido, Fnacimiento, Sexo, nacionalidad, rol)
         {
-            idActor = idactor,
             Nombre = nombre,
             Apellido = apellido,
             FNacimiento = Fnacimiento,
-            sexo = Sexo,
+            Sexo = Sexo,
             Nacionalidad = nacionalidad,
             Rol = rol
         };

@@ -2,20 +2,18 @@ namespace Cine.Core;
 
 public class Pelicula
 {
-    public Pelicula()
-    {
-    }
 
-    public Pelicula (byte idPelicula, byte idProduccion, string nombre, DateTime estreno, string Descripcion, byte Calificacion, TimeSpan duracion, byte restriccion, uint recaudado)
+
+    public Pelicula (byte idPelicula, byte idProduccion, string nombre, DateTime estreno, string descripcion, byte calificacion, TimeSpan duracion, byte restrincion, UInt64 recaudado)
     {
         IdPelicula = idPelicula;
         IdProduccion = idProduccion;
         Nombre = nombre;
         estreno = Estreno;
-        Descripcion = Descripcion;
-        Calificacion = Calificacion;
+        descripcion = Descripcion;
+        calificacion = Calificacion;
         duracion = Duracion;
-        restriccion = Restriccion;
+        restrincion = Restriccion;
         recaudado = Recaudado;
     }
     
@@ -27,13 +25,9 @@ public class Pelicula
     public byte Calificacion { get ; set ; }
     public TimeSpan Duracion { get ; set ; }
     public byte Restriccion { get ; set ; }
-    public uint Recaudado { get ; set ; }
+    public UInt64 Recaudado { get ; set ; }
     public IEnumerable<Trailer> Trailers { get ; set ; }
     public IEnumerable<Actor> Actores { get; set; }
     public Produccion ?Produccion { get ; set ; }
 }
 
-public class Actor
-{
-    
-}

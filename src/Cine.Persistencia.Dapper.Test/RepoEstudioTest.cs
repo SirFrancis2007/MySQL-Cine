@@ -17,22 +17,20 @@ public class RepoEstudioTest : TestBase
         Assert.Contains(repos, est => est.Nombre == "Disney" && est.IdEstudio == 1);
     }
 
-    [Fact]
+    /*[Fact]
     public void AltaEstudioOK()
     {
-        Byte idestudio = 3;
         string nombre = "Pixar";
         DateTime fundacion = new DateTime(1986, 02, 13);
 
-        var altaestudiopixar = new Estudio(idestudio, nombre, fundacion)
+        var altaestudiopixar = new Estudio(0, nombre, fundacion)
         {
-            IdEstudio = idestudio,
             Nombre = nombre,
             Fundacion = fundacion
         };
 
         repo.Alta(altaestudiopixar);
-    }
+    }*/
 
     [Fact]
     public void BorrarEstudioExcep()

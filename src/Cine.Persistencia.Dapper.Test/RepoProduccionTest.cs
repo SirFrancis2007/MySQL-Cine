@@ -18,7 +18,6 @@ public class RepoProduccionTest : TestBase
     [Fact]
     public void AltaProduccionOK () {
         // star wars el despertar de la fuerza
-        byte idproduccion = 5;
         byte idestudio = 1;
         string productor = "Kathleen Kennedy";
         string director = "J.J. Abrams";
@@ -28,9 +27,8 @@ public class RepoProduccionTest : TestBase
         string musica = "John Williams";
         decimal presupuesto = 245000000;
 
-        var altaproStarwars7 = new Produccion (idproduccion, idestudio, productor, director, guion, vestuario, sonido, presupuesto, musica) 
+        var altaproStarwars7 = new Produccion (0, idestudio, productor, director, guion, vestuario, sonido, presupuesto, musica) 
         {
-            IdProduccion = idproduccion,
             IdEstudio = idestudio,
             Productor = productor,
             Director = director,
@@ -38,12 +36,15 @@ public class RepoProduccionTest : TestBase
             Vestuario = vestuario,
             Sonido = sonido,
             Musica = musica
-        };        
+        };    
+
+        repo.Alta(altaproStarwars7);    
     }
+
+    [Fact]
 
     public void AltaProduccion2OK () {
         // star wars the last jedi
-        byte idproduccion = 6;
         byte idestudio = 1;
         string productor = "Kathleen Kennedy";
         string director = "J.J. Abrams";
@@ -53,9 +54,8 @@ public class RepoProduccionTest : TestBase
         string musica = "John Williams";
         decimal presupuesto = 317000000;
 
-        var altaproStarwars7 = new Produccion (idproduccion, idestudio, productor, director, guion, vestuario, sonido, presupuesto, musica) 
+        var altaproStarwars8 = new Produccion (0, idestudio, productor, director, guion, vestuario, sonido, presupuesto, musica) 
         {
-            IdProduccion = idproduccion,
             IdEstudio = idestudio,
             Productor = productor,
             Director = director,
@@ -63,6 +63,9 @@ public class RepoProduccionTest : TestBase
             Vestuario = vestuario,
             Sonido = sonido,
             Musica = musica
-        };        
+        };    
+
+        repo.Alta(altaproStarwars8);    
+    
     }
 }

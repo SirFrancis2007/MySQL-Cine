@@ -19,36 +19,34 @@ public class RepoSagaTest : TestBase
     [Fact]
     public void AltaSagaStarWars ()
     {
-        byte idSaga = 3;
-        byte idPelicula = 4 ;
+        byte idPelicula = 1 ;
         byte numero_saga = 2;
         string nombre = "star wars saga";
 
-        var altaSagaStarWars = new Saga (idSaga, numero_saga,idPelicula,nombre) 
+        var altaSagaStarWars = new Saga (0, numero_saga,idPelicula,nombre) 
         {
-            IdSaga = idSaga,
             NSaga = numero_saga,
             IdPelicula = idPelicula,
             NombreSaga = nombre
         };
-        
+
+        repo.Alta(altaSagaStarWars);        
     }
 
     [Fact]
     public void AltaSagaStarWars8 ()
     {
-        byte idSaga = 4;
-        byte idPelicula = 5 ;
+        byte idPelicula = 2 ;
         byte numero_saga = 2;
         string nombre = "star wars saga";
 
-        var altaSagaStarWars = new Saga (idSaga, numero_saga,idPelicula,nombre) 
+        var altaSagaStarWars = new Saga (0, numero_saga,idPelicula,nombre) 
         {
-            IdSaga = idSaga,
             NSaga = numero_saga,
             IdPelicula = idPelicula,
             NombreSaga = nombre
         };
-    }
 
+        repo.Alta(altaSagaStarWars);        
+    }
 }

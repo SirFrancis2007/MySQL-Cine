@@ -18,12 +18,10 @@ public class RepoGeneroTest : TestBase
     [Fact]
     
     public void AltageneroOK () {
-        Byte Idgenero = 5;
         string nombre = "Terror";
 
         var altageneroterror = new Genero () 
         {
-            IdGenero = Idgenero,
             Nombre = nombre
         };
 

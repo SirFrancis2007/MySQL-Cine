@@ -21,38 +21,38 @@ public class RepoTrailerTest : TestBase
     [Fact]
     public void AltaTrailersw7 ()
     {
-        byte idTrailer = 4 ;
-        byte idPelicula = 4 ;
+        byte idPelicula = 1 ;
         byte idGenero = 1 ;
         string nombre = "Trailer Star Wars el despertar de la fuerza" ;
         TimeSpan duracion = new TimeSpan (00,01,38) ;
 
-        var AltaTrailersw7 = new Trailer ( idTrailer,idPelicula,idGenero,nombre,duracion)
+        var AltaTrailersw7 = new Trailer (0,idPelicula,idGenero,nombre,duracion)
         {
-            IdTrailer = idTrailer,
             IdPelicula = idPelicula,
             IdGenero = idGenero,
             Nombre = nombre,
             Duracion = duracion
         };
+
+        repo.Alta(AltaTrailersw7);
     }
 
     [Fact]
     public void AltaTrailersw8 ()
     {
-        byte idTrailer = 5 ;
-        byte idPelicula = 5 ;
+        byte idPelicula = 2 ;
         byte idGenero = 1 ;
         string nombre = "Trailer Star Wars: Los ultimos jedi" ;
         TimeSpan duracion = new TimeSpan (00,02,28) ;
 
-        var AltaTrailersw7 = new Trailer ( idTrailer,idPelicula,idGenero,nombre,duracion)
+        var AltaTrailersw8 = new Trailer (0,idPelicula,idGenero,nombre,duracion)
         {
-            IdTrailer = idTrailer,
             IdPelicula = idPelicula,
             IdGenero = idGenero,
             Nombre = nombre,
             Duracion = duracion
         };
+
+        repo.Alta(AltaTrailersw8);
     }
 }
