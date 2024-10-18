@@ -86,7 +86,10 @@ START TRANSACTION ;
  -- (@idTrInterestelar_3, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:26'), -- trailer 3
  (@idTrInterestelar_4, @idGFiccion, @idPeliInterestelar, 'Interestelar', '00:02:19') -- tailer 4 Fijarse en ponerle la coma una vez verificado el Full test
 ;
- Test1
+
+SELECT 'Ingresando ActoresPel'
+
+ -- Test1
  (@idActorIdina, @idPeliFrozen, "Elsa"),
  (@idActorJonathan, @idPeliFrozen, "Kristoff"),
  (@idActorJosh, @idPeliFrozen, "Olaf"),

@@ -1,5 +1,6 @@
 DROP DATABASE IF EXISTS 5to_Pelicula;
 CREATE DATABASE 5to_Pelicula;
+SELECT 'Creando Pelis' Estado;
 USE 5to_Pelicula;
 
 CREATE TABLE Genero (
@@ -49,7 +50,7 @@ CREATE TABLE Actor (
   fecha_nacimiento DATE NOT NULL,
   sexo CHAR(1) NOT NULL,
   nacionalidad VARCHAR(40) NOT NULL,
-  rol VARCHAR(40) NOT NULL
+  rol VARCHAR(40) NULL
 );
 
 CREATE TABLE Actor_Pelicula (

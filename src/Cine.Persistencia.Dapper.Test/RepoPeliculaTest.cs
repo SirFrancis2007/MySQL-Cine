@@ -21,8 +21,9 @@ public class RepoPeliculaTest : TestBase
     [Fact]
     public void TraerActoresDePelisOK()
     {
-        var repos = repo.ActoresPelicula(1);
-        Assert.Contains(repos, acpeli => acpeli.Nombre == "Bell");
+        var actores = repo.ActoresPelicula(1);
+        Assert.Contains(actores, a => a.idActor == 1);
+        // nos tendria que traer a Bell (Elsa) de frozen 1
     }
 
     [Fact]

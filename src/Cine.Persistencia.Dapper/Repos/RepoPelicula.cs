@@ -55,16 +55,16 @@ public class RepoPelicula : RepoBase, IRepoPelicula
 
     private static readonly string queryActorPelicula
      = @"
-
-        SELECT  Actor.idActor, Nombre,Apellido, fecha_nacimiento, Sexo, Nacionalidad, Rol
+        SELECT  Actor.idActor, Actor.Nombre, Actor.Apellido, Actor.fecha_nacimiento, Actor.Sexo, Actor.Nacionalidad, Actor.Rol
         FROM    Actor_Pelicula
         JOIN    Actor USING (idActor)
-        WHERE   idPelicula = @idPelicula
+        JOIN    Pelicula USING (idPelicula)
+        WHERE   idPelicula = @idPelicula;
         ";
 
     public IEnumerable<Actor> ActoresPelicula(byte idPelicula)
     {
-        var ActoresPelicula = Conexion.Query<Actor>(queryActorPelicula, idPelicula);
-        return ActoresPelicula;    
+        var ActoresPelicula = Conexion.Query<Actor>(queryActorPelicula, new {idPelicula = idPelicula});
+        return ActoresPelicula;   
     }
 }

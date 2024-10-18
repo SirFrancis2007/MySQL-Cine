@@ -1,4 +1,6 @@
-Use 5to_Pelicula;
+-- Active: 1729186022063@@127.0.0.1@3306@5to_Pelicula
+Use 5to_Pelicula ;
+SELECT 'Creando SPs' Estado ;
 /*Store procedure*/
 
 -- Registar nuevo estudio
@@ -161,6 +163,47 @@ END $$
 CALL insSaga (@idSagaFrozen_1, 1 ,@idPeliFrozen, 'Frozen una aventura congelada') $$
 CALL insSAga (@idSagaFrozen_2, 1 ,@idPeliFrozen2, 'Frozen 2') $$
 
+delimiter $$
+drop procedure if exists InsActPeli $$
+create PROCEDURE InsActPeli (unidActor TINYINT UNSIGNED, unidPelicula TINYINT UNSIGNED, unRol VARCHAR(50))
+begin
+    insert into Actor_Pelicula(idActor, idPelicula, personaje)
+    values (unidActor, unidPelicula, unRol);
+end $$
+
+ call InsActPeli(@idActorIdina, @idPeliFrozen, "Elsa") $$
+ call InsActPeli(@idActorKristen, @idPeliFrozen, "Anna") $$
+ call InsActPeli(@idActorJonathan, @idPeliFrozen, "Kristoff") $$
+ call InsActPeli(@idActorJosh, @idPeliFrozen, "Olaf") $$
+ call InsActPeli(@idActorAlan, @idPeliFrozen, "Duque Weselton") $$
+ call InsActPeli(@idActorEva, @idPeliFrozen, "Joven Elsa") $$
+ call InsActPeli(@idActorLivy, @idPeliFrozen, "Joven Anna") $$
+ call InsActPeli(@idActorSantino, @idPeliFrozen, "Hans") $$
+ -- Frozen 2
+ call InsActPeli(@idActorKristen, @idPeliFrozen2, "Anna") $$
+ call InsActPeli(@idActorIdina, @idPeliFrozen2, "Elsa") $$
+ call InsActPeli(@idActorJonathan, @idPeliFrozen2, "Kristoff") $$
+ call InsActPeli(@idActorJosh, @idPeliFrozen2, "Olaf") $$
+ call InsActPeli(@idActorSterling, @idPeliFrozen2, "Matthias") $$
+ call InsActPeli(@idActorEvan, @idPeliFrozen2, "Iduna") $$
+ call InsActPeli(@idActorMartha, @idPeliFrozen2, "Yelana") $$
+ call InsActPeli(@idActorRachel, @idPeliFrozen2, "Honeymaren") $$
+  -- Interesellar
+ call InsActPeli(@idActorMatthew, @idPeliInterestelar, "Joseph Coope") $$
+ call InsActPeli(@idActorAnne, @idPeliInterestelar, "Amelia Brand") $$
+ call InsActPeli(@idActorFoy, @idPeliInterestelar, "Murph joven") $$
+ call InsActPeli(@idActorJessica, @idPeliInterestelar, "Murph adulta") $$
+ call InsActPeli(@idActorMichael, @idPeliInterestelar, "Profesor Brand") $$
+ call InsActPeli(@idActorCasey, @idPeliInterestelar, "Tom") $$
+ call InsActPeli(@idActorMatt, @idPeliInterestelar, "Dr. Mann") $$
+ call InsActPeli(@idActorLithgow, @idPeliInterestelar, "Donald") $$
+ call InsActPeli(@idActorEllen, @idPeliInterestelar, "Murph anciana") $$
+ call InsActPeli(@idActorDavid, @idPeliInterestelar, "Romilly") $$
+ call InsActPeli(@idActorTopher, @idPeliInterestelar, "Getty") $$
+ call InsActPeli(@idActorChalamet, @idPeliInterestelar, "Tom joven") $$
+ call InsActPeli(@idActorStewart, @idPeliInterestelar, "CASE") $$
+
+
 -- Incrementa el presupuesto
 DELIMITER $$
 Drop Procedure if EXISTS `IncPresupuesto` $$
@@ -178,9 +221,9 @@ DELIMITER $$
 Drop Procedure if EXISTS DelActor $$
 CREATE PROCEDURE DelActor (xidActor tinyint unsigned)
 begin
-    START TRANSACTION
-        DELETE from `Actor`
-        where `idActor` = xidActor;
+    START TRANSACTION;
+        DELETE from Actor
+        where idActor = xidActor;
     COMMIT;
 end $$
 

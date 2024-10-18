@@ -1,6 +1,8 @@
 /*Funtions*/
 
-Use 5to_Pelicula;
+Use 5to_Pelicula ;
+
+SELECT 'Creando SFs' Estado ;
 
 /*Calcular el tiempo total de toda una saga*/
 
@@ -38,4 +40,4 @@ END $$
 
 /*Ejemplo de invocacion*/
 
-SELECT CalPresuEstudio(1) AS TotalRecaudado;
+
