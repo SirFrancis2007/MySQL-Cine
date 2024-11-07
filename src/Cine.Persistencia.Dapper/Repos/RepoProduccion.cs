@@ -32,4 +32,14 @@ public class RepoProduccion : RepoBase, IRepoProduccion
         var producciones = Conexion.Query<Produccion>(query);
         return producciones;
     }
+
+    public IEnumerable<Produccion> DirectorActualiza(Produccion produccion, byte unidProduccion)
+    {
+        var Query = @"UPDATE Produccion
+                    set Director_General = unDirector, Productor = unProductor, Guion = unGuion, Musica = unaMusica, Presupuesto = unPresuppuesto, Sonido = unSonido, Vestuario = unVestuario
+                    WHERE idProduccion = @idProduccion";
+           
+        var actualizaciones = Conexion.Query<Produccion>(Query, new {idProduccion = produccion});
+        return actualizaciones;
+    }
 }

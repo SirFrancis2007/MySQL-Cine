@@ -1,4 +1,4 @@
--- Active: 1700068523370@@127.0.0.1@3306@5to_Pelicula
+-- Active: 1729186022063@@127.0.0.1@3306@5to_Pelicula
 USE 5to_Pelicula;
 
 -- create user [if not exists]'nomrbreuser'@'terminal' identified by 'password';

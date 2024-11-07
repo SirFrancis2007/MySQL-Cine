@@ -28,7 +28,31 @@ public class RepoEstudio:RepoBase, IRepoEstudio
 
     public Estudio? Detalle(byte indiceSimple)
     {
+        
         throw new NotImplementedException();
+    }
+
+    /*mtd query de peliculas segun estudio y genero*/
+    public List<Pelicula> mtdPeliculaEstudio (string elgenero, string elestudio)
+    {
+        var query = @"select Pelicula.nombre, restrincion, descripcion, Pelicula.duracion, Director_General 
+                        from Produccion
+                        join Pelicula using (idProduccion)
+                        join Trailer using (idPelicula)
+                        join Genero using (idGenero)
+                        join Estudio using (idEstudio)
+                        where genero = @genero and Estudio.nombre = @nombre";
+        
+        try
+        {
+            Conexion.Execute(query, new {genero = elgenero, nombre = elestudio});
+            var peliEstudioGenero = Conexion.Query<Pelicula>(query);
+            return (List<Pelicula>)peliEstudioGenero;
+        }
+        catch (System.Exception)
+        {
+            throw;
+        }
     }
 
     public void Borrar(byte idEstudio)

@@ -227,4 +227,25 @@ begin
     COMMIT;
 end $$
 
+
+-- Actualizacion de produccion, desde el usuario de Director
+DELIMITER $$
+drop procedure if EXISTS New_Actualizacion $$
+create procedure New_Actualizacion (unidProduccion tinyint unsigned, unDirector VARCHAR(50), unProductor VARCHAR(50), unGuion varchar(100), unaMusica varchar(100), unPresupuesto decimal, unSonido varchar(100), unVestuario varchar(100))
+begin 
+    START TRANSACTION;
+    UPDATE Produccion
+    set Director_General = unDirector,
+        Productor = unProductor,
+        Guion = unGuion, Musica = unaMusica,
+        Presupuesto = unPresuppuesto,
+        Sonido = unSonido,
+        Vestuario = unVestuario
+    WHERE idProduccion = unidProduccion;
+    COMMIT;
+END $$
+
+
+
+
 	

@@ -56,3 +56,13 @@ FROM    Actor_Pelicula
 JOIN    Actor USING (idActor)
 JOIN    Pelicula USING (idPelicula)
 WHERE   idPelicula = 1;
+
+-- query de prueba
+
+select Pelicula.nombre, restrincion, descripcion, Pelicula.duracion, Director_General 
+from Produccion
+join Pelicula using (idProduccion)
+join Trailer using (idPelicula)
+join Genero using (idGenero)
+join Estudio using (idEstudio)
+where genero = "Familiar" and Estudio.nombre = "Disney";

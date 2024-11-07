@@ -68,4 +68,29 @@ public class RepoProduccionTest : TestBase
         repo.Alta(altaproStarwars8);    
     
     }
+
+    public void ActualizacionProduc()
+    {
+        byte idestudio = 1;
+        string productor = "";
+        string director = "";
+        string guion = "";
+        string vestuario = "";
+        string sonido = "";
+        string musica = "";
+        decimal presupuesto = 230000;
+
+        var ActualizacionProduc = new Produccion (0, idestudio, productor, director, guion, vestuario, sonido, presupuesto, musica) 
+        {
+            IdEstudio = idestudio,
+            Productor = productor,
+            Director = director,
+            Guion = guion,
+            Vestuario = vestuario,
+            Sonido = sonido,
+            Musica = musica
+        };    
+
+        repo.DirectorActualiza(ActualizacionProduc, 0);    
+    }
 }

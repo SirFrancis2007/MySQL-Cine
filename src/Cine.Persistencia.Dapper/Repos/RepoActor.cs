@@ -30,4 +30,12 @@ public class RepoActor:RepoBase, IRepoActor
         var Actor = Conexion.Query<Actor>(query);        
         return Actor;
     }
+
+    /*Filtrar las peliculas que participo x artor/actriz*/
+    /*ELiminar una pelicula (lo que conyeva a borrar todo)*/
+    /*Update de calificacion de clientes*/
+    /*Hacer algo que el cliente no pueda hacer y que salte error pero que no salga error.*/
+    /*Lo mismo que el anterior pero con director con estudio*/
+
+    
 }
