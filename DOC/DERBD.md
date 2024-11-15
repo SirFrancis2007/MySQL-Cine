@@ -1,46 +1,67 @@
-<h1 align="center">E.T. Nº12 D.E. 1º "Libertador Gral. José de San Martín"</h1>
-<p align="center">
-  <img src="https://et12.edu.ar/imgs/computacion/vamoaprogramabanner.png" alt="Banner Computación">
-</p>
-
-## Computación 2024
-
-**Asignatura**: Base de Datos
-
-**Curso**: 5° 8°
-
-# Reseñas de Peliculas
-
-Este proyecto de base de datos "Reseñas de peliculas" tiene como objectivo mostrar la gestion y organizacion de peliculas como de sagas. Desarrollado y almacenada en una Base de datos relacional en ['Mysql'] junto a un backend desarrollado sobre [Dapper] en [C#]. 
-
-## Comenzando 🚀
-
-Clonar el repositorio github, desde Github Desktop o ejecutar en la terminal o CMD:
+```mermaid
+erDiagram
+Pelicula{
+mediumint_unsigned idpelicula PK
+int_unsigned id_produccion FK
+varchar(40) Nombre
+date Estreno
+varchar(300) Descripcion
+tinyint_unsigned calificacion
+TIME duracion
+tinyint_unsigned Restrincion
+Biging_Unsigned Recaudado
+}
+Produccion{
+int_unsigned id_produccion PK
+int_unsigned  id_Estudio Fk
+varchar(50) Director_General
+varchar(100) guion
+varchar(100) Productor
+varchar(100) Vestuario
+varchar(100) Sonido
+float Presupuesto
+varchar(100) musica
+}
+Trailer{
+   tinyint_unsigned ID_Trailer PK
+   tinyint_unsigned id_genero FK
+   varchar(50) Nombre
+   TIME duracion
+   mediumint_unsigned idpelicula FK
+}
+Genero{
+   tinyint_unsigned id_genero PK
+   varchar(30) Genero
+}
+Saga{
+   tinyint_unsigned IdSaga PK
+   tinyint_unsigned id_Pelicula FK
+   tinyint_unsigned Numero_Saga
+   varchar(50) Nombre
+}
+Actor{
+   int_unsigned id_actor PK
+   varchar(40) Nombre
+   varchar(40) apellido
+   date fecha_nacimiento
+   char(1) sexo
+   varchar(40) nacionalidad
+   varchar(40) Rol
+}
+Actor_Pelicula{
+   int_unsigned id_actor fk,pk
+   mediumint id_Pelicula fk,pk
+}
+Estudio{
+   int_unsigned id_Estudio pk
+   varchar(15) Nombre uk
+   year anio_fundacion
+}
+Actor}|--||Actor_Pelicula:""
+Pelicula}|--||Actor_Pelicula:""
+Pelicula||--}|Trailer:""
+Pelicula}|--o|Saga:""
+Pelicula}|--||Produccion:""
+Estudio||--|{Produccion:""
+Genero}|--||Trailer:""
 ```
-git clone https://github.com/SirFrancis2007/MySQL-Cine.git
-```
-
-### Pre-requisitos 📋
-
-- [.NET 8.0](https://dotnet.microsoft.com/es-es/download/dotnet/8.0).
-
-## Despliegue 📦
-
-_Para **Presentar_**
-
-## Construido con 🛠️
-
-- C# 12.0
-- MySQL 8.0
-- Visual Studio Code.
-
-## Autores ✒️
-
-- **Francisco García** - [SirFrancis2007](https://github.com/SirFrancis2007) 
-- **Aylen Toledo** - []()
-- **Geraldine Vargas** - []() 
-
-
-## Licencia 📄
-
-Este proyecto está bajo la Licencia Creative Commons Attribution 4.0 International - mira el archivo [LICENSE](LICENSE) para detalles.
